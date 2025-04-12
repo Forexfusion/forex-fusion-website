@@ -1,0 +1,16 @@
+{
+  "/page": "app/page.js",
+  "/FAQ/page": "app/FAQ/page.js",
+  "/comex-benefits/page": "app/comex-benefits/page.js",
+  "/disclaimer/page": "app/disclaimer/page.js",
+  "/forex-benefits/page": "app/forex-benefits/page.js",
+  "/payment/page": "app/payment/page.js",
+  "/about/page": "app/about/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/report/page": "app/report/page.js",
+  "/refund/page": "app/refund/page.js",
+  "/pricing/page": "app/pricing/page.js",
+  "/terms/page": "app/terms/page.js",
+  "/services/page": "app/services/page.js",
+  "/contact/page": "app/contact/page.js"
+}
