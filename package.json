@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postinstall": "chmod +x node_modules/.bin/next"
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",
