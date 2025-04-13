@@ -18,3 +18,17 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* 🔽 Add this at the end 🔽 */
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide {
+  animation: slide 25s linear infinite;
+}

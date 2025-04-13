@@ -1,4 +1,6 @@
-// /src/app/pricing/page.tsx
+'use client';
+import PricingCard from "../../components/PricingCard"; // Adjusted path based on your file structure
+
 export default function PricingPage() {
   return (
     <div className="min-h-screen bg-[#0b0f19] text-white pt-24 px-6">
@@ -15,9 +17,7 @@ export default function PricingPage() {
             <li>✓ Basic AI strategies</li>
             <li>✓ Email support</li>
           </ul>
-          <button className="bg-gradient-to-r from-green-400 to-blue-500 text-white py-2 px-4 rounded-full hover:scale-105 transition">
-            Get Core
-          </button>
+          <PricingCard plan="Core" />
         </div>
 
         {/* Pro Plan */}
@@ -31,9 +31,7 @@ export default function PricingPage() {
             <li>✓ Telegram Alerts</li>
             <li>✓ Priority support</li>
           </ul>
-          <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-4 rounded-full hover:scale-105 transition">
-            Get Pro
-          </button>
+          <PricingCard plan="Pro" />
         </div>
 
         {/* Apex Plan */}
@@ -47,9 +45,7 @@ export default function PricingPage() {
             <li>✓ Dedicated manager</li>
             <li>✓ 24/7 premium support</li>
           </ul>
-          <button className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-2 px-4 rounded-full hover:scale-105 transition">
-            Get Apex
-          </button>
+          <PricingCard plan="Apex" />
         </div>
       </div>
     </div>
