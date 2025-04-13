@@ -16,10 +16,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/payment/page.js"
     ],
-    "/pay/crypto/[plan]/page": [
+    "/about/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/pay/crypto/[plan]/page.js"
+      "static/chunks/app/about/page.js"
     ]
   }
 }
