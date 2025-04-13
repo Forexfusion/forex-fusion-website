@@ -61,3 +61,12 @@ export default function CryptoPaymentPage({ params }: Props) {
     </div>
   );
 }
+
+// ✅ Tell Next.js to pre-render these dynamic routes
+export async function generateStaticParams() {
+  return [
+    { plan: 'core' },
+    { plan: 'pro' },
+    { plan: 'apex' },
+  ];
+}
