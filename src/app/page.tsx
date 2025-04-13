@@ -1,14 +1,14 @@
 "use client";
 import { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
-import Navbar from "../components/Navbar"; // adjust path if needed
+import Navbar from "../components/Navbar"; // path adjust kar lena
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(true);
 
   const triggerPopup = useCallback(() => {
     setShowPopup(false);
-    setTimeout(() => setShowPopup(true), 100); // re-trigger
+    setTimeout(() => setShowPopup(true), 100); // re-trigger popup on Home click
   }, []);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function Home() {
         </a>
       </section>
 
-      {/* ✅ Broker Logos Section (with names + sliding) */}
+      {/* Broker Logos Section */}
       <section className="py-12 px-6 text-center overflow-hidden">
         <h2 className="text-2xl font-bold text-white mb-8">
           Available on Trusted Platforms
@@ -84,30 +84,29 @@ export default function Home() {
             Why Choose Forex Fusion?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div className="bg-[#111827] p-6 rounded-2xl shadow-md">
-              <h3 className="text-xl font-semibold mb-2">AI-Powered Accuracy</h3>
-              <p className="text-gray-400 text-sm">
-                Leverage cutting-edge AI to get high-precision trade signals and market predictions.
-              </p>
-            </div>
-            <div className="bg-[#111827] p-6 rounded-2xl shadow-md">
-              <h3 className="text-xl font-semibold mb-2">24/7 Market Insights</h3>
-              <p className="text-gray-400 text-sm">
-                Stay updated with continuous analysis and insights around the clock.
-              </p>
-            </div>
-            <div className="bg-[#111827] p-6 rounded-2xl shadow-md">
-              <h3 className="text-xl font-semibold mb-2">Easy to Use</h3>
-              <p className="text-gray-400 text-sm">
-                Whether you're a beginner or pro, our intuitive interface makes trading simple.
-              </p>
-            </div>
-            <div className="bg-[#111827] p-6 rounded-2xl shadow-md">
-              <h3 className="text-xl font-semibold mb-2">Dedicated Support</h3>
-              <p className="text-gray-400 text-sm">
-                Our expert team is here to help you every step of the way.
-              </p>
-            </div>
+            {[
+              {
+                title: "AI-Powered Accuracy",
+                desc: "Leverage cutting-edge AI to get high-precision trade signals and market predictions.",
+              },
+              {
+                title: "24/7 Market Insights",
+                desc: "Stay updated with continuous analysis and insights around the clock.",
+              },
+              {
+                title: "Easy to Use",
+                desc: "Whether you're a beginner or pro, our intuitive interface makes trading simple.",
+              },
+              {
+                title: "Dedicated Support",
+                desc: "Our expert team is here to help you every step of the way.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-[#111827] p-6 rounded-2xl shadow-md">
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-gray-400 text-sm">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
