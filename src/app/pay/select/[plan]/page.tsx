@@ -1,3 +1,4 @@
+// app/pay/[plan]/page.tsx
 'use client';
 import { useParams } from 'next/navigation';
 
@@ -5,9 +6,9 @@ export default function SelectPlanPage() {
   const { plan } = useParams();
 
   const pricing = {
-    core: "₹19999",
-    pro: "₹24999",
-    apex: "₹49999"
+    core: "₹19999/month",
+    pro: "₹24999/month",
+    apex: "₹49999/month"
   };
 
   return (
