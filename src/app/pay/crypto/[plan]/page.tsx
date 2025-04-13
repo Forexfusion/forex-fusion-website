@@ -1,5 +1,4 @@
 import Image from "next/image";
-export const dynamicParams = true;
 export default function CryptoPaymentPage() {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center p-6">
