@@ -1,0 +1,145 @@
+{
+  "pages": {
+    "/layout": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/176-f41de231f4dfc3df.js",
+      "static/chunks/222-3789a8fe960a0c64.js",
+      "static/css/35ae331b4b22f395.css",
+      "static/chunks/app/layout-a47ddf8fafd22570.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/176-f41de231f4dfc3df.js",
+      "static/chunks/222-3789a8fe960a0c64.js",
+      "static/chunks/877-d319ab3664fcfb3a.js",
+      "static/chunks/app/page-b44b512545ae2b81.js"
+    ],
+    "/about/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/app/about/page-88d917cf13f837a6.js"
+    ],
+    "/comex-benefits/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/app/comex-benefits/page-fd1ee29020790683.js"
+    ],
+    "/FAQ/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/app/FAQ/page-c15e5afe2d676add.js"
+    ],
+    "/disclaimer/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/app/disclaimer/page-5af3e1b863a487af.js"
+    ],
+    "/forex-benefits/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/app/forex-benefits/page-fea03e05525df072.js"
+    ],
+    "/contact/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/app/contact/page-b108100eeb7d64f6.js"
+    ],
+    "/pricing/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/app/pricing/page-fc54d3b9508b9c60.js"
+    ],
+    "/privacy/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/app/privacy/page-2227d9bb8ac51984.js"
+    ],
+    "/payment/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/176-f41de231f4dfc3df.js",
+      "static/chunks/app/payment/page-bf7c78356a02e495.js"
+    ],
+    "/refund/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/app/refund/page-41aff2b91ab66694.js"
+    ],
+    "/services/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/app/services/page-f4ea51122bec221f.js"
+    ],
+    "/terms/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/app/terms/page-8ac53169410bed4f.js"
+    ],
+    "/report/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/app/report/page-4f2427fb8403276f.js"
+    ],
+    "/pay/crypto/[plan]/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/222-3789a8fe960a0c64.js",
+      "static/chunks/app/pay/crypto/[plan]/page-4987559256fff2e4.js"
+    ],
+    "/pay/razorpay/[plan]/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/app/pay/razorpay/[plan]/page-f4609bf794b9b8b0.js"
+    ],
+    "/pay/select/[plan]/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/app/pay/select/[plan]/page-1ee5ad175c204790.js"
+    ],
+    "/pay/stripe/[plan]/page": [
+      "static/chunks/webpack-0efced8141a5adbd.js",
+      "static/chunks/fd9d1056-61d75a4c17b36f5c.js",
+      "static/chunks/596-e8919279acd0892c.js",
+      "static/chunks/main-app-43241ccaa2b2dc46.js",
+      "static/chunks/app/pay/stripe/[plan]/page-5f7a94e320fb6590.js"
+    ]
+  }
+}
