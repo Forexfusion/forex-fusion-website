@@ -1,20 +1,9 @@
 {
   "/page": "app/page.js",
-  "/comex-benefits/page": "app/comex-benefits/page.js",
-  "/FAQ/page": "app/FAQ/page.js",
-  "/about/page": "app/about/page.js",
-  "/forex-benefits/page": "app/forex-benefits/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/privacy/page": "app/privacy/page.js",
-  "/refund/page": "app/refund/page.js",
-  "/report/page": "app/report/page.js",
-  "/payment/page": "app/payment/page.js",
   "/pricing/page": "app/pricing/page.js",
+  "/about/page": "app/about/page.js",
   "/services/page": "app/services/page.js",
-  "/terms/page": "app/terms/page.js",
-  "/disclaimer/page": "app/disclaimer/page.js",
-  "/pay/crypto/[plan]/page": "app/pay/crypto/[plan]/page.js",
-  "/pay/razorpay/[plan]/page": "app/pay/razorpay/[plan]/page.js",
+  "/payment/page": "app/payment/page.js",
   "/pay/select/[plan]/page": "app/pay/select/[plan]/page.js",
-  "/pay/stripe/[plan]/page": "app/pay/stripe/[plan]/page.js"
+  "/pay/crypto/[plan]/page": "app/pay/crypto/[plan]/page.js"
 }
