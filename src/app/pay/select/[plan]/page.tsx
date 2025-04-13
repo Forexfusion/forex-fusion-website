@@ -1,41 +1,41 @@
-interface PlanPageProps {
-  params: { plan: string };
-}
+'use client';
+import { useParams } from 'next/navigation';
 
-const pricing: Record<string, { name: string; amount: string }> = {
-  core: { name: "Core Plan", amount: "₹19999" },
-  pro: { name: "Pro Plan", amount: "₹24999" },
-  apex: { name: "Apex Plan", amount: "₹49999" },
-};
+export default function SelectPlanPage() {
+  const { plan } = useParams();
 
-export default function PlanPage({ params }: PlanPageProps) {
-  const { plan } = params;
-  const planData = pricing[plan.toLowerCase()] || { name: "Unknown Plan", amount: "N/A" };
+  const pricing = {
+    core: "₹19999",
+    pro: "₹24999",
+    apex: "₹49999"
+  };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-4">
-      <h1 className="text-4xl font-bold mb-2">{planData.name}</h1>
-      <p className="text-lg text-gray-300 mb-1">You are about to purchase the {planData.name.toLowerCase()}.</p>
-      <p className="text-2xl font-semibold text-green-400 mb-8">Amount: {planData.amount}</p>
+    <div className="min-h-screen bg-[#0b0f19] text-white flex flex-col items-center justify-center px-4 text-center">
+      <h1 className="text-4xl font-bold mb-4 capitalize">{plan} Plan</h1>
+      <p className="text-lg text-gray-300 mb-4">
+        You are about to purchase the <strong>{plan}</strong> plan.
+      </p>
+      <p className="text-2xl text-yellow-400 font-bold mb-8">{pricing[plan as keyof typeof pricing]}</p>
 
-      <div className="space-y-4 w-full max-w-xs">
+      <div className="flex flex-col gap-4 w-full max-w-xs">
         <a
           href={`/pay/razorpay/${plan}`}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl block text-center"
+          className="bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg font-medium transition"
         >
           Pay with Razorpay
         </a>
         <a
           href={`/pay/stripe/${plan}`}
-          className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-xl block text-center"
+          className="bg-purple-500 hover:bg-purple-600 text-white py-2 rounded-lg font-medium transition"
         >
           Pay with Stripe
         </a>
         <a
           href={`/pay/crypto/${plan}`}
-          className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-xl block text-center"
+          className="bg-yellow-500 hover:bg-yellow-600 text-black py-2 rounded-lg font-medium transition"
         >
-          Pay with Crypto (Binance)
+          Pay with Crypto
         </a>
       </div>
     </div>
