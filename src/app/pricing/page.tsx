@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-20 text-center bg-white text-black">
+    <section id="pricing" className="py-20 text-center bg-[#0e0e0e] text-white">
       <h2 className="text-3xl font-bold mb-6">Our Pricing Plans</h2>
       <p className="mb-6">Choose a plan that fits your trading style and experience level.</p>
       <div className="flex justify-center gap-8 flex-wrap">
