@@ -1,9 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[450],{2842:function(e,t,r){Promise.resolve().then(r.bind(r,9076))},9076:function(e,t,r){"use strict";r.r(t),r.d(t,{default:function(){return s}});var n=r(7437),o=r(2265),c=r(4033);function s(e){let{params:t}=e;(0,c.useRouter)(),(0,o.useEffect)(()=>{let e=r(t.plan);window.location.href="https://buy.stripe.com/test_xxx?amount=".concat(e)},[t.plan]);let r=e=>{switch(e){case"core":default:return 999;case"pro":return 2499;case"apex":return 4999}};return(0,n.jsx)("div",{className:"text-center py-32 text-white",children:(0,n.jsx)("h1",{children:"Redirecting to Stripe..."})})}},622:function(e,t,r){"use strict";/**
- * @license React
- * react-jsx-runtime.production.min.js
- *
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */var n=r(2265),o=Symbol.for("react.element"),c=(Symbol.for("react.fragment"),Object.prototype.hasOwnProperty),s=n.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,u={key:!0,ref:!0,__self:!0,__source:!0};function i(e,t,r){var n,i={},f=null,a=null;for(n in void 0!==r&&(f=""+r),void 0!==t.key&&(f=""+t.key),void 0!==t.ref&&(a=t.ref),t)c.call(t,n)&&!u.hasOwnProperty(n)&&(i[n]=t[n]);if(e&&e.defaultProps)for(n in t=e.defaultProps)void 0===i[n]&&(i[n]=t[n]);return{$$typeof:o,type:e,key:f,ref:a,props:i,_owner:s.current}}t.jsx=i,t.jsxs=i},7437:function(e,t,r){"use strict";e.exports=r(622)},4033:function(e,t,r){e.exports=r(8165)}},function(e){e.O(0,[971,596,744],function(){return e(e.s=2842)}),_N_E=e.O()}]);

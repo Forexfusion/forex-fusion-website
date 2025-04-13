@@ -1,11 +1,9 @@
 "use client";
-import { useRouter, useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-export default function RazorpayPaymentPage() {
+export default function RazorpayPayment({ params }: { params: { plan: string } }) {
   const router = useRouter();
-  const params = useParams<{ plan: string }>();
-  const plan = params.plan;
 
   useEffect(() => {
     const loadRazorpay = () => {
@@ -13,13 +11,13 @@ export default function RazorpayPaymentPage() {
       script.src = "https://checkout.razorpay.com/v1/checkout.js";
       script.onload = () => {
         const options = {
-          key: "YOUR_RAZORPAY_KEY_ID", // ✅ Replace with your actual Razorpay Key ID
-          amount: getAmount(plan),
+          key: "YOUR_RAZORPAY_KEY_ID", // Replace this with your real key
+          amount: getAmount(params.plan),
           currency: "INR",
           name: "Forex Fusion",
-          description: `Purchase ${plan} plan`,
+          description: `Purchase ${params.plan} plan`,
           handler: function (response: any) {
-            alert("✅ Payment Successful! ID: " + response.razorpay_payment_id);
+            alert("✅ Payment Successful: " + response.razorpay_payment_id);
             router.push("/");
           },
           prefill: {
@@ -27,40 +25,34 @@ export default function RazorpayPaymentPage() {
             email: "user@example.com",
           },
           theme: {
-            color: "#10B981", // Green
+            color: "#0B1120",
           },
         };
-        const rzp = new (window as any).Razorpay(options);
-        rzp.open();
-      };
-      script.onerror = () => {
-        alert("❌ Failed to load Razorpay SDK.");
+        const paymentObject = new (window as any).Razorpay(options);
+        paymentObject.open();
       };
       document.body.appendChild(script);
     };
 
-    if (plan) {
-      loadRazorpay();
-    }
-  }, [plan, router]);
+    loadRazorpay();
+  }, [params.plan, router]);
 
   const getAmount = (plan: string) => {
     switch (plan) {
       case "core":
-        return 99900; // ₹999 * 100
+        return 1999900;
       case "pro":
-        return 249900;
+        return 2499900;
       case "apex":
-        return 499900;
+        return 4999900;
       default:
-        return 99900;
+        return 1999900;
     }
   };
 
   return (
-    <div className="min-h-screen bg-[#0B1120] text-white flex flex-col justify-center items-center">
-      <h1 className="text-2xl sm:text-3xl font-bold mb-4">Redirecting to Razorpay...</h1>
-      <p className="text-gray-400">Please wait while we prepare your payment...</p>
+    <div className="text-center py-32 text-white">
+      <h1>Redirecting to Razorpay...</h1>
     </div>
   );
 }
