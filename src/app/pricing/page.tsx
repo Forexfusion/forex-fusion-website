@@ -21,17 +21,16 @@ export default function Pricing() {
         </div>
 
         {/* Pro Plan */}
-        <div className="border-2 border-yellow-500 p-6 rounded w-64 shadow bg-yellow-50">
-          <h3 className="font-bold text-xl mb-2">Pro</h3>
-          <p className="mb-2">“Power & Performance Combined”</p>
-          <span className="block font-semibold mb-4">₹5,000/month</span>
-          <Link href="/pay/crypto/pro">
-            <button className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition">
-              Get Pro
-            </button>
-          </Link>
-        </div>
-
+       <div className="border-2 border-yellow-500 p-6 rounded w-64 shadow bg-yellow-50 text-black">
+  <h3 className="font-bold text-xl mb-2">Pro</h3>
+  <p className="mb-2">“Power & Performance Combined”</p>
+  <span className="block font-semibold mb-4">₹5,000/month</span>
+  <Link href="/pay/crypto/pro">
+    <button className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition">
+      Get Pro
+    </button>
+  </Link>
+</div>
         {/* Apex Plan */}
         <div className="border p-6 rounded w-64 shadow">
           <h3 className="font-bold text-xl mb-2">Apex</h3>
