@@ -15,7 +15,7 @@ export default function Pricing() {
         <div className="border border-white p-8 rounded-xl w-80 shadow-lg bg-[#111]">
           <h3 className="font-bold text-2xl mb-3">Core</h3>
           <p className="mb-3 text-gray-400 text-base">“Smart Start for Every Trader”</p>
-          <span className="block text-xl font-semibold mb-6">₹19999<span className="text-base font-normal">/month</span></span>
+          <span className="block text-xl font-semibold mb-6">250$<span className="text-base font-normal">/month</span></span>
           <Link href="/pay/crypto/core">
             <button className="bg-blue-600 text-white text-lg px-6 py-2 rounded-lg hover:bg-blue-700 transition">
               Get Core
@@ -27,7 +27,7 @@ export default function Pricing() {
         <div className="border border-white p-8 rounded-xl w-80 shadow-lg bg-[#111]">
           <h3 className="font-bold text-2xl mb-3">Pro</h3>
           <p className="mb-3 text-gray-400 text-base">“Power & Performance Combined”</p>
-          <span className="block text-xl font-semibold mb-6">₹24999<span className="text-base font-normal">/month</span></span>
+          <span className="block text-xl font-semibold mb-6">500$<span className="text-base font-normal">/month</span></span>
           <Link href="/pay/crypto/pro">
             <button className="bg-yellow-400 text-black text-lg px-6 py-2 rounded-lg hover:bg-yellow-500 transition">
               Get Pro
@@ -39,7 +39,7 @@ export default function Pricing() {
         <div className="border border-white p-8 rounded-xl w-80 shadow-lg bg-[#111]">
           <h3 className="font-bold text-2xl mb-3">Apex</h3>
           <p className="mb-3 text-gray-400 text-base">“Unleash Elite Trading Mastery”</p>
-          <span className="block text-xl font-semibold mb-6">₹49999<span className="text-base font-normal">/month</span></span>
+          <span className="block text-xl font-semibold mb-6">1000$<span className="text-base font-normal">/month</span></span>
           <Link href="/pay/crypto/apex">
             <button className="bg-green-600 text-white text-lg px-6 py-2 rounded-lg hover:bg-green-700 transition">
               Get Apex
