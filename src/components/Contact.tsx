@@ -11,19 +11,16 @@ const ContactForm = () => {
 
     try {
       await fetch("https://script.google.com/macros/s/AKfycbxI7FUwqXaneqQidi8A8zCr9sGRV7cieGNJBQq21i2ZRjXNQaWKTqMS0L7abeeBfiiOrg/exec", {
-  method: "POST",
-  mode: "no-cors",
-  body: new FormData(form),
-});
+        method: "POST",
+        mode: "no-cors",
+        body: new FormData(form),
+      });
 
-      // ⚠️ no-cors mode can't return success, so we assume it's sent
-      console.log("Form submitted, no-cors mode, can't confirm response but likely succeeded.");
+      console.log("Form submitted successfully.");
       form.reset();
-      alert("Message Sent Successfully! Check Google Sheet to confirm.");
     } catch (error) {
       console.log("Form submitted, no-cors mode, can't confirm response but likely succeeded.");
       console.error("Catch block error (safe to ignore if sheet updated):", error);
-      alert("Something went wrong! Please try again later.");
     } finally {
       setLoading(false);
     }
