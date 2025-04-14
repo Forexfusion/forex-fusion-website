@@ -19,11 +19,9 @@ const ContactForm = () => {
       });
 
       setSuccess(true);
-      alert("Message sent successfully ✅");
       form.reset();
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("Something went wrong, but your message may still have been sent.");
     } finally {
       setLoading(false);
     }
@@ -36,7 +34,7 @@ const ContactForm = () => {
       <input type="text" name="Contact" placeholder="Your Contact Number" required className="w-full p-2 rounded bg-gray-800 text-white" />
       <textarea name="Message" placeholder="Your Message" required className="w-full p-2 rounded bg-gray-800 text-white"></textarea>
 
-      {success && <p className="text-green-400 text-sm">Form submitted successfully!</p>}
+      {success && <p className="text-green-400">✅ Message sent successfully!</p>}
 
       <button type="submit" className="bg-gradient-to-r from-green-400 to-purple-500 p-2 rounded text-white w-full">
         {loading ? "Sending..." : "Send"}
