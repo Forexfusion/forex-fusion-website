@@ -20,8 +20,9 @@ const ContactForm = () => {
     setSuccess(false);
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbyyX7KMYLjTKu7vENMhyxxauwPELz4sCkkNMqIYMHbNjypBLEC9VbCwO6-FEC0jwVgTQw/exec", {
+      await fetch("https://script.google.com/macros/s/AKfycbyyX7KMYLjTKu7vENMhyxxauwPELz4sCkkNMqIYMHbNjypBLEC9VbCwO6-FEC0jwVgTQw/exec", {
         method: "POST",
+        mode: "no-cors", // ✅ Important for Google Apps Script live
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
@@ -32,9 +33,6 @@ const ContactForm = () => {
           Message: form.Message,
         }).toString(),
       });
-
-      const result = await response.text();
-      console.log("Google Sheet Response:", result);
 
       setSuccess(true);
       setForm({ Name: '', Email: '', Contact: '', Message: '' });
