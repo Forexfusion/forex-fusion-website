@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setSuccess(false);
 
     const form = e.target;
 
@@ -16,12 +18,11 @@ const ContactForm = () => {
         body: new FormData(form),
       });
 
-      console.log("Form submitted successfully.");
+      setSuccess(true);
       alert("Message sent successfully ✅");
       form.reset();
     } catch (error) {
-      console.log("Form submitted, no-cors mode, can't confirm response but likely succeeded.");
-      console.error("Catch block error (safe to ignore if sheet updated):", error);
+      console.error("Error submitting form:", error);
       alert("Something went wrong, but your message may still have been sent.");
     } finally {
       setLoading(false);
@@ -30,14 +31,17 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
-  <input type="text" name="Name" placeholder="Your Name" required className="w-full p-2 rounded bg-gray-800 text-white" />
-  <input type="email" name="Email" placeholder="Your Email" required className="w-full p-2 rounded bg-gray-800 text-white" />
-  <input type="text" name="Contact" placeholder="Your Contact Number" required className="w-full p-2 rounded bg-gray-800 text-white" />
-  <textarea name="Message" placeholder="Your Message" required className="w-full p-2 rounded bg-gray-800 text-white"></textarea>
-  <button type="submit" className="bg-gradient-to-r from-green-400 to-purple-500 p-2 rounded text-white w-full">
-    {loading ? "Sending..." : "Send"}
-  </button>
-</form>
+      <input type="text" name="Name" placeholder="Your Name" required className="w-full p-2 rounded bg-gray-800 text-white" />
+      <input type="email" name="Email" placeholder="Your Email" required className="w-full p-2 rounded bg-gray-800 text-white" />
+      <input type="text" name="Contact" placeholder="Your Contact Number" required className="w-full p-2 rounded bg-gray-800 text-white" />
+      <textarea name="Message" placeholder="Your Message" required className="w-full p-2 rounded bg-gray-800 text-white"></textarea>
+
+      {success && <p className="text-green-400 text-sm">Form submitted successfully!</p>}
+
+      <button type="submit" className="bg-gradient-to-r from-green-400 to-purple-500 p-2 rounded text-white w-full">
+        {loading ? "Sending..." : "Send"}
+      </button>
+    </form>
   );
 };
 
