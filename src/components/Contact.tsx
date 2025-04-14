@@ -10,7 +10,7 @@ export default function Contact() {
     const form = e.target;
 
     try {
-      await fetch("https://script.google.com/macros/s/AKfycbzSv7_ZwSuuGW-cKmycV9TnbfnihYunVEN81Xk_WecwxwZK7HGEC5ZkrGp9ehrNJ1gO3w/exec", {
+      await fetch("https://script.google.com/macros/s/AKfycbxI7FUwqXaneqQidi8A8zCr9sGRV7cieGNJBQq21i2ZRjXNQaWKTqMS0L7abeeBfiiOrg/exec", {
         method: "POST",
         mode: "no-cors",
         body: new FormData(form),
