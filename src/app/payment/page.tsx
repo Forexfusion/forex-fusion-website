@@ -14,9 +14,9 @@ export default function PaymentPage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           {[
-            { name: "Core", price: "250$", id: "core" },
-            { name: "Pro", price: "500$", id: "pro" },
-            { name: "Apex", price: "1000$", id: "apex" },
+            { name: "Core", price: "350$", id: "core" },
+            { name: "Pro", price: "700$", id: "pro" },
+            { name: "Apex", price: "1500$", id: "apex" },
           ].map((plan) => (
             <div key={plan.id} className="bg-[#111827] p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300">
               <h3 className="text-xl font-bold mb-2">{plan.name} Plan</h3>
