@@ -24,18 +24,17 @@ const ContactForm = () => {
 
     try {
       const response = await fetch("https://script.google.com/macros/s/AKfycbyyX7KMYLjTKu7vENMhyxxauwPELz4sCkkNMqIYMHbNjypBLEC9VbCwO6-FEC0jwVgTQw/exec", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          Name: form.Name,
-          Email: form.Email,
-          Contact: form.Contact,
-          Message: form.Message,
-        }),
-      });
-
+  method: "POST",
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded",
+  },
+  body: new URLSearchParams({
+    Name: form.Name,
+    Email: form.Email,
+    Contact: form.Contact,
+    Message: form.Message,
+  }),
+});
       // Since Apps Script often doesn’t return readable body on no-cors, we assume success if no error is thrown
       if (response.ok) {
         setSuccess(true);
