@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   Empowering traders with precision tools, strategic insights, and real-time AI signals.
                 </p>
                 <p className="text-sm text-gray-500">
-                  © 2027 Forex Fusion. All rights reserved..
+                  © 2017 Forex Fusion. All rights reserved..
                 </p>
               </div>
 
