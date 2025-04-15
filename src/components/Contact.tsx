@@ -7,8 +7,10 @@ const ContactForm = () => {
     Contact: '',
     Message: ''
   });
+
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -18,11 +20,11 @@ const ContactForm = () => {
     e.preventDefault();
     setLoading(true);
     setSuccess(false);
+    setError(false);
 
     try {
-      await fetch("https://script.google.com/macros/s/AKfycbyyX7KMYLjTKu7vENMhyxxauwPELz4sCkkNMqIYMHbNjypBLEC9VbCwO6-FEC0jwVgTQw/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbyyX7KMYLjTKu7vENMhyxxauwPELz4sCkkNMqIYMHbNjypBLEC9VbCwO6-FEC0jwVgTQw/exec", {
         method: "POST",
-        mode: "no-cors", // ✅ Important for Google Apps Script live
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
@@ -31,13 +33,19 @@ const ContactForm = () => {
           Email: form.Email,
           Contact: form.Contact,
           Message: form.Message,
-        }).toString(),
+        }),
       });
 
-      setSuccess(true);
-      setForm({ Name: '', Email: '', Contact: '', Message: '' });
-    } catch (error) {
-      console.error("Error submitting form:", error);
+      // Since Apps Script often doesn’t return readable body on no-cors, we assume success if no error is thrown
+      if (response.ok) {
+        setSuccess(true);
+        setForm({ Name: '', Email: '', Contact: '', Message: '' });
+      } else {
+        throw new Error('Response not OK');
+      }
+    } catch (err) {
+      console.error("Error:", err);
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -82,9 +90,11 @@ const ContactForm = () => {
       ></textarea>
 
       {success && <p className="text-green-400">✅ Message sent successfully!</p>}
+      {error && <p className="text-red-400">❌ Failed to send message. Try again later.</p>}
 
       <button
         type="submit"
+        disabled={loading}
         className="bg-gradient-to-r from-green-400 to-purple-500 p-2 rounded text-white w-full"
       >
         {loading ? "Sending..." : "Send"}
