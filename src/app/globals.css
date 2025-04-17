@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base Styling */
 body {
   margin: 0;
   padding: 0;
@@ -19,7 +20,7 @@ a {
   box-sizing: border-box;
 }
 
-/* 🔽 Add this at the end 🔽 */
+/* Animation for Sliding Elements */
 @keyframes slide {
   0% {
     transform: translateX(100%);
@@ -40,12 +41,13 @@ body::after {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: url('/logo.png'); /* Logo from public folder */
-  background-size: 500px;
+  background-image: url('/logo.png'); /* Logo should be placed in /public/logo.png */
+  background-size: 800px; /* Size of the watermark */
   background-repeat: no-repeat;
-  opacity: 0.1; /* Adjust opacity for subtlety */
-  pointer-events: none; /* Ensures it doesn't block interaction */
-  z-index: 9999; /* Keeps it on top of other elements */
-  width: 200px; /* Adjust the size of the watermark */
-  height: 200px; /* Adjust the size of the watermark */
+  background-position: center;
+  opacity: 0.03; /* Light transparent watermark */
+  pointer-events: none; /* Doesn't block interactions */
+  z-index: 0; /* Behind all content */
+  width: 800px;
+  height: 800px;
 }
