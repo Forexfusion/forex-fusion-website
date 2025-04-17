@@ -41,7 +41,7 @@ body::after {
   left: 50%;
   transform: translate(-50%, -50%);
   background-image: url('/logo.png'); /* Logo from public folder */
-  background-size: contain;
+  background-size: 500px;
   background-repeat: no-repeat;
   opacity: 0.1; /* Adjust opacity for subtlety */
   pointer-events: none; /* Ensures it doesn't block interaction */
