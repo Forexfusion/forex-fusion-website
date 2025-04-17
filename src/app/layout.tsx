@@ -86,7 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   alt: "WhatsApp",
                   content: (
                     <a
-                      href="https://wa.me/9730998680"
+                      href="https://wa.me/+919730998680"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:underline"
