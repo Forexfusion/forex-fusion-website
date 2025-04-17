@@ -45,7 +45,7 @@ body::after {
   background-size: 800px; /* Size of the watermark */
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.03; /* Light transparent watermark */
+  opacity: 0.05; /* Light transparent watermark */
   pointer-events: none; /* Doesn't block interactions */
   z-index: 0; /* Behind all content */
   width: 800px;
