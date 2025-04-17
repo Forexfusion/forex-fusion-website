@@ -15,7 +15,7 @@ export default function Navbar({ onHomeClick }: NavbarProps) {
     <nav className="w-full bg-[#0b0f19] text-white py-4 px-6 fixed top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2" onClick={onHomeClick}>
-          <Image src="/logo.png" alt="Forex Fusion" width={36} height={36} priority />
+          <Image src="/logo.png" alt="Forex Fusion" width={56} height={56} priority />
           <span className="text-xl font-bold">Forex Fusion</span>
         </Link>
 
