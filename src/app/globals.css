@@ -32,3 +32,20 @@ a {
 .animate-slide {
   animation: slide 25s linear infinite;
 }
+
+/* Watermark Styles */
+body::after {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('/logo.png'); /* Logo from public folder */
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.1; /* Adjust opacity for subtlety */
+  pointer-events: none; /* Ensures it doesn't block interaction */
+  z-index: 9999; /* Keeps it on top of other elements */
+  width: 200px; /* Adjust the size of the watermark */
+  height: 200px; /* Adjust the size of the watermark */
+}
