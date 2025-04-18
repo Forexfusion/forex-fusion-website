@@ -11,7 +11,7 @@ export default function ContactPage() {
 
     try {
       const response = await fetch(
-  "https://script.google.com/macros/library/d/1uzvKcibI_Iom-YpmmNSrAfsPC-CekHUO-vOIdKKZoqoFW0OWrMG5fusC/5",
+  "https://script.google.com/macros/s/AKfycbyyX7KMYLjTKu7vENMhyxxauwPELz4sCkkNMqIYMHbNjypBLEC9VbCwO6-FEC0jwVgTQw/exec",
   {
     method: "POST",
     headers: {
