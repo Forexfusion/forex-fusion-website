@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 
 const ContactForm = () => {
   const [form, setForm] = useState({
-    Name: '',
-    Email: '',
-    Contact: '',
-    Message: ''
+    name: '',
+    email: '',
+    contact: '',
+    message: ''
   });
 
   const [loading, setLoading] = useState(false);
@@ -24,21 +24,21 @@ const ContactForm = () => {
 
     try {
       const response = await fetch("https://script.google.com/macros/s/AKfycbyyX7KMYLjTKu7vENMhyxxauwPELz4sCkkNMqIYMHbNjypBLEC9VbCwO6-FEC0jwVgTQw/exec", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/x-www-form-urlencoded",
-  },
-  body: new URLSearchParams({
-    Name: form.Name,
-    Email: form.Email,
-    Contact: form.Contact,
-    Message: form.Message,
-  }),
-});
-      // Since Apps Script often doesn’t return readable body on no-cors, we assume success if no error is thrown
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          name: form.name,
+          email: form.email,
+          contact: form.contact,
+          message: form.message,
+        }),
+      });
+
       if (response.ok) {
         setSuccess(true);
-        setForm({ Name: '', Email: '', Contact: '', Message: '' });
+        setForm({ name: '', email: '', contact: '', message: '' });
       } else {
         throw new Error('Response not OK');
       }
@@ -54,37 +54,37 @@ const ContactForm = () => {
     <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
       <input
         type="text"
-        name="Name"
+        name="name"
         placeholder="Your Name"
         required
         className="w-full p-2 rounded bg-gray-800 text-white"
-        value={form.Name}
+        value={form.name}
         onChange={handleChange}
       />
       <input
         type="email"
-        name="Email"
+        name="email"
         placeholder="Your Email"
         required
         className="w-full p-2 rounded bg-gray-800 text-white"
-        value={form.Email}
+        value={form.email}
         onChange={handleChange}
       />
       <input
         type="text"
-        name="Contact"
+        name="contact"
         placeholder="Your Contact Number"
         required
         className="w-full p-2 rounded bg-gray-800 text-white"
-        value={form.Contact}
+        value={form.contact}
         onChange={handleChange}
       />
       <textarea
-        name="Message"
+        name="message"
         placeholder="Your Message"
         required
         className="w-full p-2 rounded bg-gray-800 text-white"
-        value={form.Message}
+        value={form.message}
         onChange={handleChange}
       ></textarea>
 
