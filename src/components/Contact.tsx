@@ -23,7 +23,7 @@ const ContactForm = () => {
     setError(false);
 
     try {
-      const response = await fetch("https://script.google.com/macros/library/d/1uzvKcibI_Iom-YpmmNSrAfsPC-CekHUO-vOIdKKZoqoFW0OWrMG5fusC/5", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbyyX7KMYLjTKu7vENMhyxxauwPELz4sCkkNMqIYMHbNjypBLEC9VbCwO6-FEC0jwVgTQw/exec", {
   method: "POST",
   headers: {
     "Content-Type": "application/x-www-form-urlencoded",
