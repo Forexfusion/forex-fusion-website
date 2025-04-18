@@ -16,16 +16,18 @@ export default function ContactPage() {
     }
 
     try {
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbyyX7KMYLjTKu7vENMhyxxauwPELz4sCkkNMqIYMHbNjypBLEC9VbCwO6-FEC0jwVgTQw/exec",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: data,
-        }
-      );
+      const response = await fetch("https://script.google.com/macros/s/AKfycbyyX7KMYLjTKu7vENMhyxxauwPELz4sCkkNMqIYMHbNjypBLEC9VbCwO6-FEC0jwVgTQw/exec", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    Name: form.Name,
+    Email: form.Email,
+    Contact: form.Contact,
+    Message: form.Message,
+  }),
+});
 
       const result = await response.json();
       if (result.result === "Success") {
