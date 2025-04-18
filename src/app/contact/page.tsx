@@ -9,17 +9,23 @@ export default function ContactPage() {
     e.preventDefault();
     setLoading(true);
 
+    // Convert form data to URLSearchParams
+    const data = new URLSearchParams();
+    for (const [key, value] of Object.entries(form)) {
+      data.append(key, value);
+    }
+
     try {
       const response = await fetch(
-  "https://script.google.com/macros/s/AKfycbyyX7KMYLjTKu7vENMhyxxauwPELz4sCkkNMqIYMHbNjypBLEC9VbCwO6-FEC0jwVgTQw/exec",
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(form),
-  }
-);
+        "https://script.google.com/macros/s/AKfycbyyX7KMYLjTKu7vENMhyxxauwPELz4sCkkNMqIYMHbNjypBLEC9VbCwO6-FEC0jwVgTQw/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: data,
+        }
+      );
 
       const result = await response.json();
       if (result.result === "Success") {
