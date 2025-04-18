@@ -22,10 +22,10 @@ export default function ContactPage() {
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    Name: form.Name,
-    Email: form.Email,
-    Contact: form.Contact,
-    Message: form.Message,
+    name: form.name,
+    email: form.email,
+    contact: form.contact,
+    message: form.message,
   }),
 });
 
