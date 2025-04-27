@@ -34,7 +34,7 @@ a {
   animation: slide 25s linear infinite;
 }
 
-/* Watermark */
+/* Watermark Logo in Background */
 body::after {
   content: "";
   position: fixed;
@@ -52,7 +52,7 @@ body::after {
   height: 800px;
 }
 
-/* 🔥 Hero Neon Border */
+/* 🔥 Hero Section Neon Border */
 .hero-neon {
   position: relative;
   padding-bottom: 4rem;
@@ -70,15 +70,20 @@ body::after {
   animation: neon-glow 2s infinite alternate;
 }
 
-/* 🔥 Common Neon Card (Services, Pricing, Payment) */
+/* 🔥 Neon Card Glow - Common for Services, Pricing, Payment */
 .neon-card {
   position: relative;
   background: #111827;
   border-radius: 1rem;
+  border: 2px solid transparent;
+  border-bottom: 2px solid #0ff;
+  box-shadow: 0 5px 15px #0ff;
+  padding: 24px;
   overflow: hidden;
   z-index: 1;
 }
 
+/* Optional - If you want outer blur glow */
 .neon-card::before {
   content: "";
   position: absolute;
@@ -92,12 +97,12 @@ body::after {
     linear-gradient(#fff 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: destination-out;
-  opacity: 0.6;
+  opacity: 0.5;
   filter: blur(10px);
   pointer-events: none;
 }
 
-/* 🔥 Animation Neon Glow */
+/* 🔥 Neon Animation */
 @keyframes neon-glow {
   0% {
     opacity: 0.6;
