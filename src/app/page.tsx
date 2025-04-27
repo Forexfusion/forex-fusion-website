@@ -21,7 +21,7 @@ export default function Home() {
       <Navbar onHomeClick={triggerPopup} />
 
       {/* 🔥 Neon Hero Section */}
-      <section className="hero-neon flex flex-col items-center justify-center text-center py-28 px-4">
+      <section className="hero-neon flex flex-col items-center justify-center text-center py-28 px-4 relative">
         <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
           Master Forex Trading with Precision
         </h1>
@@ -78,7 +78,7 @@ export default function Home() {
       </section>
 
       {/* 🔥 Neon Why Choose Us Section */}
-      <section className="neon-background py-24 px-4">
+      <section className="py-24 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16">
             Why Choose Forex Fusion?
@@ -102,10 +102,7 @@ export default function Home() {
                 desc: "Our expert team is here to help you every step of the way.",
               },
             ].map((item, i) => (
-              <div
-                key={i}
-                className="bg-[#111827] p-6 rounded-2xl shadow-lg hover:shadow-cyan-500/20 transition"
-              >
+              <div key={i} className="card-neon p-6 rounded-2xl shadow-md">
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-gray-400 text-sm">{item.desc}</p>
               </div>
