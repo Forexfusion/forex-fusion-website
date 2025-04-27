@@ -1,14 +1,14 @@
 "use client";
 import { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
-import Navbar from "../components/Navbar"; // path adjust kar lena
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(true);
 
   const triggerPopup = useCallback(() => {
     setShowPopup(false);
-    setTimeout(() => setShowPopup(true), 100); // re-trigger popup on Home click
+    setTimeout(() => setShowPopup(true), 100);
   }, []);
 
   useEffect(() => {
@@ -20,8 +20,8 @@ export default function Home() {
     <main className="bg-[#0B1120] text-white min-h-screen relative">
       <Navbar onHomeClick={triggerPopup} />
 
-      {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center py-28 px-4">
+      {/* 🔥 Neon Hero Section */}
+      <section className="neon-background flex flex-col items-center justify-center text-center py-28 px-4">
         <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
           Master Forex Trading with Precision
         </h1>
@@ -77,8 +77,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-24 px-4 bg-[#0B1120]">
+      {/* 🔥 Neon Why Choose Us Section */}
+      <section className="neon-background py-24 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16">
             Why Choose Forex Fusion?
@@ -102,7 +102,10 @@ export default function Home() {
                 desc: "Our expert team is here to help you every step of the way.",
               },
             ].map((item, i) => (
-              <div key={i} className="bg-[#111827] p-6 rounded-2xl shadow-md">
+              <div
+                key={i}
+                className="bg-[#111827] p-6 rounded-2xl shadow-lg hover:shadow-cyan-500/20 transition"
+              >
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-gray-400 text-sm">{item.desc}</p>
               </div>
