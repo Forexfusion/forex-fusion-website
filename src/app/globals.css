@@ -7,8 +7,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff;
-  color: #000;
+  background-color: #0B1120; /* ✅ Dark background instead of white */
+  color: #ffffff; /* ✅ White text */
 }
 
 a {
@@ -41,7 +41,7 @@ body::after {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: url('/logo.png'); /* Logo should be placed in /public/logo.png */
+  background-image: url('/logo.png'); /* Logo should be placed inside /public/logo.png */
   background-size: 800px; /* Size of the watermark */
   background-repeat: no-repeat;
   background-position: center;
@@ -52,8 +52,10 @@ body::after {
   height: 800px;
 }
 
-/* ✅ Neon Background */
+/* ✅ Neon Background Section */
 .neon-background {
   background: linear-gradient(135deg, #0B1120 0%, #1F2937 100%);
   box-shadow: 0 0 10px #0ff, 0 0 40px #0ff, 0 0 80px #0ff;
+  border-radius: 1rem;
+  padding: 5rem 1rem;
 }
