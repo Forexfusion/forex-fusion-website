@@ -21,7 +21,7 @@ export default function Home() {
       <Navbar onHomeClick={triggerPopup} />
 
       {/* 🔥 Neon Hero Section */}
-      <section className="neon-background flex flex-col items-center justify-center text-center py-28 px-4">
+      <section className="hero-neon flex flex-col items-center justify-center text-center py-28 px-4">
         <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
           Master Forex Trading with Precision
         </h1>
