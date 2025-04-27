@@ -51,3 +51,9 @@ body::after {
   width: 800px;
   height: 800px;
 }
+
+/* ✅ Neon Background */
+.neon-background {
+  background: linear-gradient(135deg, #0B1120 0%, #1F2937 100%);
+  box-shadow: 0 0 10px #0ff, 0 0 40px #0ff, 0 0 80px #0ff;
+}
