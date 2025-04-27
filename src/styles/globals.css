@@ -7,8 +7,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff;
-  color: #000;
+  background-color: #0B1120;
+  color: #fff;
 }
 
 a {
@@ -20,7 +20,7 @@ a {
   box-sizing: border-box;
 }
 
-/* Animation for Sliding Elements */
+/* Sliding Animation */
 @keyframes slide {
   0% {
     transform: translateX(100%);
@@ -34,26 +34,30 @@ a {
   animation: slide 25s linear infinite;
 }
 
-/* Watermark Styles */
+/* Watermark */
 body::after {
   content: "";
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: url('/logo.png'); /* Logo should be placed in /public/logo.png */
-  background-size: 800px; /* Size of the watermark */
+  background-image: url('/logo.png');
+  background-size: 800px;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.05; /* Light transparent watermark */
-  pointer-events: none; /* Doesn't block interactions */
-  z-index: 0; /* Behind all content */
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
   width: 800px;
   height: 800px;
 }
 
-/* ✅ Neon Background */
-.neon-background {
-  background: linear-gradient(135deg, #0B1120 0%, #1F2937 100%);
-  box-shadow: 0 0 10px #0ff, 0 0 40px #0ff, 0 0 80px #0ff;
+/* ✅ Center Neon Glow Box */
+.center-glow-box {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2rem;
+  background: #0B1120;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff, 0 0 60px #00f0ff;
 }
