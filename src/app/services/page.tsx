@@ -48,7 +48,7 @@ export default function ServicesPage() {
         {services.map((service, index) => (
           <div
             key={index}
-            className="neon-card flex flex-col justify-between" // 👈 neon-card class added here
+            className="bg-[#111827] border border-gray-700 rounded-2xl p-6 shadow-lg hover:shadow-blue-500/50 transition-all flex flex-col justify-between"
           >
             <div>
               <h2 className="text-2xl font-semibold mb-3">{service.title}</h2>
@@ -59,12 +59,12 @@ export default function ServicesPage() {
                 ))}
               </ul>
             </div>
-            <a
-              href="/contact"
-              className="mt-auto inline-block text-center bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 text-white py-2 px-4 rounded-xl shadow-lg hover:scale-105 transition"
-            >
-              Get Now
-            </a>
+<a
+  href="/contact"
+  className="mt-auto inline-block text-center bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 text-white py-2 px-4 rounded-xl shadow-lg hover:scale-105 transition"
+>
+  Get Now
+</a>
           </div>
         ))}
       </div>
