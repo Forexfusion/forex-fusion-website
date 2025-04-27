@@ -20,7 +20,7 @@ a {
   box-sizing: border-box;
 }
 
-/* Sliding Animation */
+/* Animation for Sliding Elements */
 @keyframes slide {
   0% {
     transform: translateX(100%);
@@ -52,12 +52,57 @@ body::after {
   height: 800px;
 }
 
-/* ✅ Center Neon Glow Box */
-.center-glow-box {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 2rem;
-  background: #0B1120;
-  border-radius: 20px;
-  box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff, 0 0 60px #00f0ff;
+/* 🔥 Hero Neon Border */
+.hero-neon {
+  position: relative;
+  padding-bottom: 4rem;
+}
+
+.hero-neon::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(90deg, #00f0ff, #00ffe7, #00f0ff);
+  box-shadow: 0 0 20px #00f0ff;
+  animation: neon-glow 2s infinite alternate;
+}
+
+/* 🔥 Common Neon Card (Services, Pricing, Payment) */
+.neon-card {
+  position: relative;
+  background: #111827;
+  border-radius: 1rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.neon-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  background: linear-gradient(90deg, #00f0ff, #00ffe7, #00f0ff);
+  background-clip: padding-box;
+  mask:
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  opacity: 0.6;
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+/* 🔥 Animation Neon Glow */
+@keyframes neon-glow {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
