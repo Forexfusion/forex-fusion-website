@@ -20,7 +20,7 @@ export default function ContactPage() {
         "https://script.google.com/macros/s/AKfycbyNf5WF99IWSHOX-Pvu-y15lGMUqCtOnWUFOtijbE3dwMp1qdW1l8K1cH4iuf94SZJ4yw/exec",
         {
           method: "POST",
-          body: formData,
+          body: formData, // NO headers needed here
         }
       );
 
