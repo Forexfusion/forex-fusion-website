@@ -16,7 +16,7 @@ export default function ContactPage() {
     }
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbyyX7KMYLjTKu7vENMhyxxauwPELz4sCkkNMqIYMHbNjypBLEC9VbCwO6-FEC0jwVgTQw/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbyNf5WF99IWSHOX-Pvu-y15lGMUqCtOnWUFOtijbE3dwMp1qdW1l8K1cH4iuf94SZJ4yw/exec", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -29,21 +29,13 @@ export default function ContactPage() {
   }),
 });
 
-      const result = await response.json();
-      if (result.result === "Success") {
-        alert("✅ Message sent successfully!");
-        setForm({ name: "", email: "", contact: "", message: "" });
-      } else {
-        alert("❌ Error: " + result.message);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("❌ Something went wrong!");
-    } finally {
-      setLoading(false);
-    }
-  };
+const result = await response.json();
 
+if (result.status === "success") {
+  alert("✅ Message sent successfully!");
+} else {
+  alert("❌ Something went wrong: " + result.message);
+}
   return (
     <div className="min-h-screen bg-[#0B1120] text-white px-4 py-20">
       <div className="max-w-3xl mx-auto">
