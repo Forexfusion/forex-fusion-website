@@ -9,33 +9,38 @@ export default function ContactPage() {
     e.preventDefault();
     setLoading(true);
 
-    // Convert form data to URLSearchParams
-    const data = new URLSearchParams();
-    for (const [key, value] of Object.entries(form)) {
-      data.append(key, value);
-    }
-
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbyNf5WF99IWSHOX-Pvu-y15lGMUqCtOnWUFOtijbE3dwMp1qdW1l8K1cH4iuf94SZJ4yw/exec", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    name: form.name,
-    email: form.email,
-    contact: form.contact,
-    message: form.message
-  }),
-});
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbyNf5WF99IWSHOX-Pvu-y15lGMUqCtOnWUFOtijbE3dwMp1qdW1l8K1cH4iuf94SZJ4yw/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: form.name,
+            email: form.email,
+            contact: form.contact,
+            message: form.message,
+          }),
+        }
+      );
 
-const result = await response.json();
+      const result = await response.json();
 
-if (result.status === "success") {
-  alert("✅ Message sent successfully!");
-} else {
-  alert("❌ Something went wrong: " + result.message);
-}
+      if (result.status === "success") {
+        alert("✅ Message sent successfully!");
+        setForm({ name: "", email: "", contact: "", message: "" }); // Form reset after success
+      } else {
+        alert("❌ Something went wrong: " + result.message);
+      }
+    } catch (error) {
+      alert("❌ Something went wrong. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#0B1120] text-white px-4 py-20">
       <div className="max-w-3xl mx-auto">
