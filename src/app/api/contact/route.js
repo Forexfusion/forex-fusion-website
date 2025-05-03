@@ -1,3 +1,5 @@
+// app/api/contact/route.js
+
 export async function POST(request) {
   try {
     const form = await request.json();
@@ -12,6 +14,7 @@ export async function POST(request) {
     );
 
     const result = await response.json();
+
     return new Response(JSON.stringify(result), {
       status: 200,
       headers: { "Content-Type": "application/json" },
