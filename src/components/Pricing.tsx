@@ -15,10 +15,7 @@ export default function Pricing() {
             <li><strong>1500$</strong> / Six Month</li>
             <li><strong>2800$</strong> / One Year</li>
           </ul>
-          <a
-            href="#"
-            className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition"
-          >
+          <a href="#" className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition">
             Get Core
           </a>
         </div>
@@ -33,10 +30,7 @@ export default function Pricing() {
             <li><strong>2000$</strong> / Six Month</li>
             <li><strong>3500$</strong> / One Year</li>
           </ul>
-          <a
-            href="#"
-            className="inline-block bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg transition"
-          >
+          <a href="#" className="inline-block bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg transition">
             Get Pro
           </a>
         </div>
@@ -51,10 +45,7 @@ export default function Pricing() {
             <li><strong>3800$</strong> / Six Month</li>
             <li><strong>5500$</strong> / One Year</li>
           </ul>
-          <a
-            href="#"
-            className="inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition"
-          >
+          <a href="#" className="inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition">
             Get Apex
           </a>
         </div>
