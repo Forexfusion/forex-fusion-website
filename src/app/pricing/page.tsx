@@ -1,9 +1,22 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
 export default function Pricing() {
   const [duration, setDuration] = useState('monthly');
+
+  const searchParams = useSearchParams();
+  const selectedPlan = searchParams.get('plan');
+
+  useEffect(() => {
+    if (selectedPlan) {
+      const pricingSection = document.getElementById('pricing');
+      if (pricingSection) {
+        pricingSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [selectedPlan]);
 
   const pricing = {
     core: {
@@ -26,7 +39,6 @@ export default function Pricing() {
     }
   };
 
-  // ✅ Static color map for Tailwind compatibility
   const colorClass = {
     core: 'bg-blue-600 hover:bg-blue-700',
     pro: 'bg-yellow-400 hover:bg-yellow-500 text-black',
@@ -34,7 +46,7 @@ export default function Pricing() {
   };
 
   return (
-    <section className="py-24 px-4 text-center bg-[#0e0e0e] text-white">
+    <section id="pricing" className="py-24 px-4 text-center bg-[#0e0e0e] text-white">
       <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Pricing Plans</h2>
       <p className="text-lg text-gray-300 mb-8">
         Choose a plan that fits your trading style and experience level.
