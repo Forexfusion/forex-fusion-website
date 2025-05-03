@@ -46,7 +46,7 @@ export default function Pricing() {
           { label: 'Monthly', key: 'monthly' },
           { label: '3 Month', key: 'threeMonth' },
           { label: '6 Month', key: 'sixMonth' },
-          { label: 'One Year', key: 'yearly' }
+          { label: '1 Year', key: 'yearly' }
         ].map((option) => (
           <button
             key={option.key}
@@ -78,7 +78,7 @@ export default function Pricing() {
                 : '“Unleash Elite Trading Mastery”'}
             </p>
             <span className="block text-xl font-semibold mb-6">
-              {pricing[plan.id][duration]} <span className="text-base font-normal">/ {duration === 'yearly' ? 'One Year' : duration === 'threeMonth' ? '3 Month' : duration === 'sixMonth' ? '6 Month' : 'Monthly'}</span>
+              {pricing[plan.id][duration]} <span className="text-base font-normal">/ {duration === 'yearly' ? '1 Year' : duration === 'threeMonth' ? '3 Month' : duration === 'sixMonth' ? '6 Month' : 'Monthly'}</span>
             </span>
             <Link href={plan.link}>
               <button
