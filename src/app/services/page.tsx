@@ -2,6 +2,7 @@ export default function ServicesPage() {
   const services = [
     {
       title: "Core (Entry-Level)",
+      slug: "core",
       description:
         "For entry-level traders with basic features and limited tools. This plan is for beginners who want basic features such as a demo account, basic charting tools, and limited leverage to understand the Forex market.",
       features: [
@@ -14,6 +15,7 @@ export default function ServicesPage() {
     },
     {
       title: "Pro",
+      slug: "pro",
       description:
         "Advanced Tools: Real-time charts, better execution speeds, advanced technical indicators, and risk management tools. This plan is for mid-level traders who want more tools and strategies, along with margin trading and risk management.",
       features: [
@@ -24,6 +26,7 @@ export default function ServicesPage() {
     },
     {
       title: "Apex",
+      slug: "apex",
       description:
         "Exclusive Features: AI-based trading, daily/weekly market analysis, professional tools and VIP services. This is for full-time experienced traders who need powerful tools, signals, webinars, and premium support.",
       features: [
@@ -59,12 +62,12 @@ export default function ServicesPage() {
                 ))}
               </ul>
             </div>
-<a
-  href="/contact"
-  className="mt-auto inline-block text-center bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 text-white py-2 px-4 rounded-xl shadow-lg hover:scale-105 transition"
->
-  Get Now
-</a>
+            <a
+              href={`/#pricing?plan=${service.slug}`}
+              className="mt-auto inline-block text-center bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 text-white py-2 px-4 rounded-xl shadow-lg hover:scale-105 transition"
+            >
+              Get Now
+            </a>
           </div>
         ))}
       </div>
