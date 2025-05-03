@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 export default function Pricing() {
   const [duration, setDuration] = useState('monthly');
-
   const searchParams = useSearchParams();
   const selectedPlan = searchParams.get('plan');
 
@@ -73,14 +72,18 @@ export default function Pricing() {
         ))}
       </div>
 
-      {/* Plan Cards */}
+      {/* Plan Cards with Neon Glow */}
       <div className="flex justify-center gap-10 flex-wrap max-w-6xl mx-auto">
         {[
           { name: 'Core', id: 'core', link: '/pay/crypto/core' },
           { name: 'Pro', id: 'pro', link: '/pay/crypto/pro' },
           { name: 'Apex', id: 'apex', link: '/pay/crypto/apex' }
         ].map((plan) => (
-          <div key={plan.id} className="border border-white p-8 rounded-xl w-80 shadow-lg bg-[#111]">
+          <div
+            key={plan.id}
+            className="border border-cyan-400 p-8 rounded-xl w-80 shadow-md bg-[#111]
+              hover:shadow-[0_0_25px_#00FFFF] transition-shadow duration-300"
+          >
             <h3 className="font-bold text-2xl mb-3">{plan.name}</h3>
             <p className="mb-3 text-gray-400 text-base">
               {plan.name === 'Core'
@@ -90,7 +93,10 @@ export default function Pricing() {
                 : '“Unleash Elite Trading Mastery”'}
             </p>
             <span className="block text-xl font-semibold mb-6">
-              {pricing[plan.id][duration]} <span className="text-base font-normal">/ {duration === 'yearly' ? '1 Year' : duration === 'threeMonth' ? '3 Month' : duration === 'sixMonth' ? '6 Month' : 'Monthly'}</span>
+              {pricing[plan.id][duration]}{' '}
+              <span className="text-base font-normal">
+                / {duration === 'yearly' ? '1 Year' : duration === 'threeMonth' ? '3 Month' : duration === 'sixMonth' ? '6 Month' : 'Monthly'}
+              </span>
             </span>
             <Link href={plan.link}>
               <button
