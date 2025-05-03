@@ -6,6 +6,7 @@ export default function ServicesPage() {
     {
       title: "Core (Entry-Level)",
       slug: "core",
+      color: "cyan",
       description:
         "For entry-level traders with basic features and limited tools. This plan is for beginners who want basic features such as a demo account, basic charting tools, and limited leverage to understand the Forex market.",
       features: [
@@ -19,6 +20,7 @@ export default function ServicesPage() {
     {
       title: "Pro",
       slug: "pro",
+      color: "yellow",
       description:
         "Advanced Tools: Real-time charts, better execution speeds, advanced technical indicators, and risk management tools. This plan is for mid-level traders who want more tools and strategies, along with margin trading and risk management.",
       features: [
@@ -30,6 +32,7 @@ export default function ServicesPage() {
     {
       title: "Apex",
       slug: "apex",
+      color: "green",
       description:
         "Exclusive Features: AI-based trading, daily/weekly market analysis, professional tools and VIP services. This is for full-time experienced traders who need powerful tools, signals, webinars, and premium support.",
       features: [
@@ -47,6 +50,12 @@ export default function ServicesPage() {
     },
   ];
 
+  const glowShadow = {
+    cyan: 'hover:shadow-[0_0_25px_#00FFFF]',
+    yellow: 'hover:shadow-[0_0_25px_#FFD700]',
+    green: 'hover:shadow-[0_0_25px_#00FF99]',
+  };
+
   return (
     <div className="min-h-screen bg-black text-white px-6 py-12">
       <h1 className="text-4xl font-bold text-center mb-12">Our Services</h1>
@@ -54,7 +63,7 @@ export default function ServicesPage() {
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-[#111827] border border-gray-700 rounded-2xl p-6 shadow-lg hover:shadow-blue-500/50 transition-all flex flex-col justify-between"
+            className={`bg-[#111827] border border-gray-700 rounded-2xl p-6 shadow-md transition-all duration-300 flex flex-col justify-between ${glowShadow[service.color]}`}
           >
             <div>
               <h2 className="text-2xl font-semibold mb-3">{service.title}</h2>
