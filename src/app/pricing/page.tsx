@@ -80,10 +80,16 @@ export default function Pricing() {
           { name: 'Apex', id: 'apex', link: '/pay/crypto/apex' }
         ].map((plan) => (
           <div
-            key={plan.id}
-            className="border border-cyan-400 p-8 rounded-xl w-80 shadow-md bg-[#111]
-              hover:shadow-[0_0_25px_#00FFFF] transition-shadow duration-300"
-          >
+  key={plan.id}
+  className={`p-8 rounded-xl w-80 shadow-lg bg-[#111] border border-white transition-all duration-300
+    ${
+      plan.id === 'core'
+        ? 'hover:shadow-[0_0_25px_#00BFFF]'
+        : plan.id === 'pro'
+        ? 'hover:shadow-[0_0_25px_#FFD700]'
+        : 'hover:shadow-[0_0_25px_#00FF99]'
+    }`}
+>
             <h3 className="font-bold text-2xl mb-3">{plan.name}</h3>
             <p className="mb-3 text-gray-400 text-base">
               {plan.name === 'Core'
