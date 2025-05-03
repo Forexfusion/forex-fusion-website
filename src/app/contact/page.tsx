@@ -10,17 +10,14 @@ export default function ContactPage() {
     setLoading(true);
 
     try {
-      const formData = new FormData();
-      formData.append("name", form.name);
-      formData.append("email", form.email);
-      formData.append("contact", form.contact);
-      formData.append("message", form.message);
-
       const response = await fetch(
         "https://script.google.com/macros/s/AKfycbyNf5WF99IWSHOX-Pvu-y15lGMUqCtOnWUFOtijbE3dwMp1qdW1l8K1cH4iuf94SZJ4yw/exec",
         {
           method: "POST",
-          body: formData,
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
         }
       );
 
