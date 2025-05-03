@@ -7,22 +7,22 @@ export default function Pricing() {
 
   const pricing = {
     core: {
-      monthly: '350$',
-      threeMonth: '900$',
-      sixMonth: '1500$',
-      yearly: '2800$'
+      monthly: '350 USD',
+      threeMonth: '900 USD',
+      sixMonth: '1500 USD',
+      yearly: '2800 USD'
     },
     pro: {
-      monthly: '500$',
-      threeMonth: '1200$',
-      sixMonth: '2000$',
-      yearly: '3500$'
+      monthly: '500$ USD',
+      threeMonth: '1200 USD',
+      sixMonth: '2000 USD',
+      yearly: '3500 USD'
     },
     apex: {
-      monthly: '1000$',
-      threeMonth: '2200$',
-      sixMonth: '3800$',
-      yearly: '5500$'
+      monthly: '1000 USD',
+      threeMonth: '2200 USD',
+      sixMonth: '3800 USD',
+      yearly: '5500 USD'
     }
   };
 
