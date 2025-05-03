@@ -1,7 +1,31 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 
 export default function PaymentPage() {
+  const [duration, setDuration] = useState("monthly");
+
+  const pricingData = {
+    core: {
+      monthly: "350$",
+      threeMonth: "900$",
+      sixMonth: "1500$",
+      yearly: "2800$"
+    },
+    pro: {
+      monthly: "500$",
+      threeMonth: "1200$",
+      sixMonth: "2000$",
+      yearly: "3500$"
+    },
+    apex: {
+      monthly: "1000$",
+      threeMonth: "2200$",
+      sixMonth: "3800$",
+      yearly: "5500$"
+    }
+  };
+
   return (
     <div className="bg-[#0B1120] text-white min-h-screen px-4 py-20">
       <div className="max-w-6xl mx-auto text-center">
@@ -10,53 +34,52 @@ export default function PaymentPage() {
           We support Razorpay, Binance Pay, and Stripe for quick and secure payments.
         </p>
 
-        <h2 className="text-3xl sm:text-4xl font-bold mb-10">Choose Your Plan</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6">Choose Your Plan</h2>
+
+        {/* Toggle */}
+        <div className="flex justify-center gap-4 mb-10">
+          {[
+            { label: "Monthly", key: "monthly" },
+            { label: "3 Month", key: "threeMonth" },
+            { label: "6 Month", key: "sixMonth" },
+            { label: "One Year", key: "yearly" }
+          ].map((opt) => (
+            <button
+              key={opt.key}
+              onClick={() => setDuration(opt.key)}
+              className={`px-4 py-2 rounded-full border text-sm font-medium transition
+                ${duration === opt.key
+                  ? "bg-white text-black"
+                  : "border-white text-white hover:bg-white hover:text-black"}`}
+            >
+              {opt.label}
+            </button>
+          ))}
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           {[
-            {
-              name: "Core",
-              id: "core",
-              pricing: [
-                { label: "Monthly", amount: "350$" },
-                { label: "Three Month", amount: "900$" },
-                { label: "Six Month", amount: "1500$" },
-                { label: "One Year", amount: "2800$" },
-              ],
-            },
-            {
-              name: "Pro",
-              id: "pro",
-              pricing: [
-                { label: "Monthly", amount: "500$" },
-                { label: "Three Month", amount: "1200$" },
-                { label: "Six Month", amount: "2000$" },
-                { label: "One Year", amount: "3500$" },
-              ],
-            },
-            {
-              name: "Apex",
-              id: "apex",
-              pricing: [
-                { label: "Monthly", amount: "1000$" },
-                { label: "Three Month", amount: "2200$" },
-                { label: "Six Month", amount: "3800$" },
-                { label: "One Year", amount: "5500$" },
-              ],
-            },
+            { name: "Core", id: "core" },
+            { name: "Pro", id: "pro" },
+            { name: "Apex", id: "apex" }
           ].map((plan) => (
             <div
               key={plan.id}
               className="bg-[#111827] p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300"
             >
               <h3 className="text-xl font-bold mb-4">{plan.name} Plan</h3>
-              <ul className="text-sm text-center mb-6 space-y-1 font-medium">
-                {plan.pricing.map((item, index) => (
-                  <li key={index}>
-                    {item.amount} / <span className="text-gray-300">{item.label}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="text-2xl font-semibold mb-6">
+                {pricingData[plan.id][duration]}{" "}
+                <span className="text-base font-normal text-gray-300">
+                  / {duration === "threeMonth"
+                    ? "3 Month"
+                    : duration === "sixMonth"
+                    ? "6 Month"
+                    : duration === "yearly"
+                    ? "One Year"
+                    : "Monthly"}
+                </span>
+              </p>
 
               <div className="flex flex-col gap-3">
                 <Link
