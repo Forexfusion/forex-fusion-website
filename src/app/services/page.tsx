@@ -1,3 +1,6 @@
+'use client';
+import Link from 'next/link';
+
 export default function ServicesPage() {
   const services = [
     {
@@ -62,12 +65,12 @@ export default function ServicesPage() {
                 ))}
               </ul>
             </div>
-            <a
-              href={`/#pricing?plan=${service.slug}`}
+            <Link
+              href={{ pathname: '/', hash: 'pricing', query: { plan: service.slug } }}
               className="mt-auto inline-block text-center bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 text-white py-2 px-4 rounded-xl shadow-lg hover:scale-105 transition"
             >
               Get Now
-            </a>
+            </Link>
           </div>
         ))}
       </div>
