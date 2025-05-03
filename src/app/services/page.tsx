@@ -74,12 +74,20 @@ export default function ServicesPage() {
                 ))}
               </ul>
             </div>
-            <Link
-              href={{ pathname: '/', hash: 'pricing', query: { plan: service.slug } }}
-              className="mt-auto inline-block text-center bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 text-white py-2 px-4 rounded-xl shadow-lg hover:scale-105 transition"
-            >
-              Get Now
-            </Link>
+           <Link
+  href={{ pathname: '/', hash: 'pricing', query: { plan: service.slug } }}
+  className={`mt-auto inline-block text-center text-white font-medium py-2 px-4 rounded-xl shadow-lg hover:scale-105 transition 
+    ${
+      service.slug === 'core'
+        ? 'bg-blue-600 hover:bg-blue-700'
+        : service.slug === 'pro'
+        ? 'bg-yellow-400 text-black hover:bg-yellow-500'
+        : 'bg-green-600 hover:bg-green-700'
+    }`}
+>
+  Get Now
+</Link>
+
           </div>
         ))}
       </div>
