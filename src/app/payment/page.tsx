@@ -14,13 +14,49 @@ export default function PaymentPage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           {[
-            { name: "Core", price: "350$", id: "core" },
-            { name: "Pro", price: "700$", id: "pro" },
-            { name: "Apex", price: "1500$", id: "apex" },
+            {
+              name: "Core",
+              id: "core",
+              pricing: [
+                { label: "Monthly", amount: "350$" },
+                { label: "Three Month", amount: "900$" },
+                { label: "Six Month", amount: "1500$" },
+                { label: "One Year", amount: "2800$" },
+              ],
+            },
+            {
+              name: "Pro",
+              id: "pro",
+              pricing: [
+                { label: "Monthly", amount: "500$" },
+                { label: "Three Month", amount: "1200$" },
+                { label: "Six Month", amount: "2000$" },
+                { label: "One Year", amount: "3500$" },
+              ],
+            },
+            {
+              name: "Apex",
+              id: "apex",
+              pricing: [
+                { label: "Monthly", amount: "1000$" },
+                { label: "Three Month", amount: "2200$" },
+                { label: "Six Month", amount: "3800$" },
+                { label: "One Year", amount: "5500$" },
+              ],
+            },
           ].map((plan) => (
-            <div key={plan.id} className="bg-[#111827] p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300">
-              <h3 className="text-xl font-bold mb-2">{plan.name} Plan</h3>
-              <p className="text-2xl font-semibold mb-6">{plan.price}</p>
+            <div
+              key={plan.id}
+              className="bg-[#111827] p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300"
+            >
+              <h3 className="text-xl font-bold mb-4">{plan.name} Plan</h3>
+              <ul className="text-sm text-center mb-6 space-y-1 font-medium">
+                {plan.pricing.map((item, index) => (
+                  <li key={index}>
+                    {item.amount} / <span className="text-gray-300">{item.label}</span>
+                  </li>
+                ))}
+              </ul>
 
               <div className="flex flex-col gap-3">
                 <Link
