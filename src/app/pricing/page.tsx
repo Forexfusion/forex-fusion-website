@@ -26,6 +26,13 @@ export default function Pricing() {
     }
   };
 
+  // ✅ Static color map for Tailwind compatibility
+  const colorClass = {
+    core: 'bg-blue-600 hover:bg-blue-700',
+    pro: 'bg-yellow-400 hover:bg-yellow-500 text-black',
+    apex: 'bg-green-600 hover:bg-green-700'
+  };
+
   return (
     <section className="py-24 px-4 text-center bg-[#0e0e0e] text-white">
       <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Pricing Plans</h2>
@@ -57,9 +64,9 @@ export default function Pricing() {
       {/* Plan Cards */}
       <div className="flex justify-center gap-10 flex-wrap max-w-6xl mx-auto">
         {[
-          { name: 'Core', id: 'core', color: 'blue', link: '/pay/crypto/core' },
-          { name: 'Pro', id: 'pro', color: 'yellow', link: '/pay/crypto/pro' },
-          { name: 'Apex', id: 'apex', color: 'green', link: '/pay/crypto/apex' }
+          { name: 'Core', id: 'core', link: '/pay/crypto/core' },
+          { name: 'Pro', id: 'pro', link: '/pay/crypto/pro' },
+          { name: 'Apex', id: 'apex', link: '/pay/crypto/apex' }
         ].map((plan) => (
           <div key={plan.id} className="border border-white p-8 rounded-xl w-80 shadow-lg bg-[#111]">
             <h3 className="font-bold text-2xl mb-3">{plan.name}</h3>
@@ -75,7 +82,7 @@ export default function Pricing() {
             </span>
             <Link href={plan.link}>
               <button
-                className={`bg-${plan.color}-600 text-white text-lg px-6 py-2 rounded-lg hover:bg-${plan.color}-700 transition`}
+                className={`${colorClass[plan.id]} text-white text-lg px-6 py-2 rounded-lg transition`}
               >
                 Get {plan.name}
               </button>
