@@ -13,7 +13,7 @@ export default function Pricing() {
       yearly: '2800 USD'
     },
     pro: {
-      monthly: '500$ USD',
+      monthly: '500 USD',
       threeMonth: '1200 USD',
       sixMonth: '2000 USD',
       yearly: '3500 USD'
