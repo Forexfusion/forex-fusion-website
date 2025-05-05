@@ -14,35 +14,28 @@ export default function PaymentPage() {
           Choose your preferred payment gateway to continue.
         </p>
 
-        {/* Payment Icons */}
+        {/* Payment Icons in Box with Neon Light */}
         <div className="flex justify-center gap-10">
-          <Link href="/pay/razorpay">
-            <Image
-              src="/icons/razorpay.png"
-              alt="Razorpay"
-              width={50}
-              height={50}
-              className="cursor-pointer hover:scale-110 transition"
-            />
-          </Link>
-          <Link href="/pay/stripe">
-            <Image
-              src="/icons/stripe.png"
-              alt="Stripe"
-              width={50}
-              height={50}
-              className="cursor-pointer hover:scale-110 transition"
-            />
-          </Link>
-          <button onClick={() => setOpenBinance(!openBinance)}>
-            <Image
-              src="/icons/binance.png"
-              alt="Binance"
-              width={50}
-              height={50}
-              className="cursor-pointer hover:scale-110 transition"
-            />
-          </button>
+          {[
+            { name: "razorpay", src: "/icons/razorpay.png", href: "/pay/razorpay", glow: "shadow-blue-500" },
+            { name: "stripe", src: "/icons/stripe.png", href: "/pay/stripe", glow: "shadow-purple-500" },
+            { name: "binance", src: "/icons/binance.png", href: "#", glow: "shadow-yellow-400", onClick: true }
+          ].map((item, index) => (
+            <div
+              key={index}
+              className={`bg-[#111827] p-4 rounded-2xl shadow-lg ${item.glow} hover:scale-105 transition-all`}
+            >
+              {item.onClick ? (
+                <button onClick={() => setOpenBinance(!openBinance)}>
+                  <Image src={item.src} alt={item.name} width={50} height={50} />
+                </button>
+              ) : (
+                <Link href={item.href}>
+                  <Image src={item.src} alt={item.name} width={50} height={50} />
+                </Link>
+              )}
+            </div>
+          ))}
         </div>
 
         {/* Binance Options */}
