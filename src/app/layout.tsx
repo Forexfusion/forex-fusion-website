@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${inter.className} bg-[#0B1120] text-white`}>
         <Navbar />
-        <div className="pt-20">{children}</div>
+        <div className="pt-32">{children}</div>
 
         {/* ✅ Footer Section */}
         <footer className="bg-[#0B1120] text-gray-300 py-12 px-6">
