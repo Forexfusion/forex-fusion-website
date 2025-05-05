@@ -1,5 +1,6 @@
 'use client';
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
   params: { plan: string };
@@ -30,9 +31,14 @@ export default function CryptoPaymentPage({ params }: Props) {
             <strong>Address:</strong><br />
             TRzoMKLaCoGCZroxUddGg7QJ27irmdpzsg
           </p>
-          <p className="text-xs text-gray-400 text-center">
+          <p className="text-xs text-gray-400 text-center mb-4">
             Send only USDT via TRC20. Do not send NFTs.
           </p>
+          <Link href="/pay/crypto/trc20">
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded transition w-full">
+              Proceed with TRC20
+            </button>
+          </Link>
         </div>
 
         {/* BEP20 Option */}
@@ -50,9 +56,14 @@ export default function CryptoPaymentPage({ params }: Props) {
             <strong>Address:</strong><br />
             0x4be19a1a2ecb95cf7561815a0bdc3bc943c1712b
           </p>
-          <p className="text-xs text-gray-400 text-center">
+          <p className="text-xs text-gray-400 text-center mb-4">
             Send only USDT via BEP20. Do not send NFTs.
           </p>
+          <Link href="/pay/crypto/bep20">
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded transition w-full">
+              Proceed with BEP20
+            </button>
+          </Link>
         </div>
       </div>
 
