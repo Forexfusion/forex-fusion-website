@@ -23,15 +23,15 @@ export default function PaymentPage() {
           ].map((item, index) => (
             <div
               key={index}
-              className={`bg-[#111827] p-4 rounded-2xl shadow-lg ${item.glow} hover:scale-105 transition-all`}
+              className={`bg-[#111827] p-6 rounded-2xl shadow-lg ${item.glow} hover:scale-105 transition-all`}
             >
               {item.onClick ? (
                 <button onClick={() => setOpenBinance(!openBinance)}>
-                  <Image src={item.src} alt={item.name} width={50} height={50} />
+                  <Image src={item.src} alt={item.name} width={75} height={75} />
                 </button>
               ) : (
                 <Link href={item.href}>
-                  <Image src={item.src} alt={item.name} width={50} height={50} />
+                  <Image src={item.src} alt={item.name} width={75} height={75} />
                 </Link>
               )}
             </div>
