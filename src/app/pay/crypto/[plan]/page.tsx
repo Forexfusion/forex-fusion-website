@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 
 interface Props {
@@ -62,11 +63,11 @@ export default function CryptoPaymentPage({ params }: Props) {
   );
 }
 
-// ✅ Tell Next.js to pre-render these dynamic routes
+// ✅ Static route generation for each plan
 export async function generateStaticParams() {
   return [
     { plan: 'core' },
     { plan: 'pro' },
-    { plan: 'apex' },
+    { plan: 'apex' }
   ];
 }
