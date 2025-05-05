@@ -47,7 +47,7 @@ export default function PaymentPage() {
 
         {/* Binance Options */}
         {openBinance && (
-          <div className="mt-6 flex flex-col gap-2 items-center">
+          <div className="mt-6 flex flex-col gap-3 items-center">
             <Link href="/pay/crypto/bep20">
               <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-2 rounded-lg transition">
                 Pay via BEP-20
