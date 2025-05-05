@@ -20,8 +20,8 @@ export default function Home() {
     <main className="bg-[#0B1120] text-white min-h-screen relative">
       <Navbar onHomeClick={triggerPopup} />
 
-      {/* ✅ Push down to avoid Navbar overlap */}
-      <div className="pt-28 hero-neon">
+      {/* ✅ Neon Glow Box pushed below Navbar */}
+      <div className="pt-24 center-glow-box">
 
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center text-center py-28 px-4">
