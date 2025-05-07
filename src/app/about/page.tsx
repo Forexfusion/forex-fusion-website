@@ -56,10 +56,10 @@ export default function AboutPage() {
 
         {/* ✅ Founder Section */}
         <div className="mt-12 flex flex-col md:flex-row items-center gap-6 border-t border-gray-700 pt-10">
-          <img
-  src="/founder.jpg"
+         <img
+  src="/founder.jpg" // make sure file is in /public folder
   alt="Founder - Aryan Tagore"
-  className="w-40 h-40 rounded-full border-2 border-yellow-500 object-cover"
+  className="w-40 h-40 rounded-full border-2 border-yellow-500 object-top object-cover"
 />
           <div className="space-y-2 text-gray-300 text-center md:text-left">
             <p className="text-lg font-semibold">Aryan Tagore</p>
