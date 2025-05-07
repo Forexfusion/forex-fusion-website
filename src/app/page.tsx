@@ -39,7 +39,7 @@ export default function Home() {
           </a>
         </section>
 
-        {/* Broker Logos Section */}
+        {/* ✅ Trusted Platforms Section - Updated Speed */}
         <section className="py-12 px-6 text-center overflow-hidden">
           <h2 className="text-2xl font-bold text-white mb-8">
             Available on Trusted Platforms
@@ -51,7 +51,7 @@ export default function Home() {
             animate={{ x: "-100%" }}
             transition={{
               repeat: Infinity,
-              duration: 40,
+              duration: 10, // ✅ Speed increased here
               ease: "linear",
             }}
           >
