@@ -59,7 +59,7 @@ export default function AboutPage() {
           <img
   src="/founder.jpg"
   alt="Founder - Aryan Tagore"
-  className="w-40 h-40 rounded-full border-2 border-yellow-500 object-contain bg-white p-1"
+  className="w-40 h-40 rounded-full border-2 border-yellow-500 object-cover"
 />
           <div className="space-y-2 text-gray-300 text-center md:text-left">
             <p className="text-lg font-semibold">Aryan Tagore</p>
