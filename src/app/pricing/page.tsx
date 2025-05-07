@@ -94,7 +94,7 @@ export default function Pricing() {
         ].map((plan) => (
           <div
             key={plan.id}
-            onClick={() => setSelectedPlan(plan.id)} // ✅ only send ID string
+            onClick={() => setSelectedPlan(plan.id)} // ✅ Store only id
             className={`cursor-pointer p-8 rounded-xl w-80 shadow-lg bg-[#111] border border-white transition-all duration-300
               ${
                 plan.id === 'core'
@@ -121,7 +121,7 @@ export default function Pricing() {
         ))}
       </div>
 
-      {/* ✅ POPUP */}
+      {/* ✅ Popup */}
       {selectedPlan && (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
           <div className="bg-gradient-to-r from-green-400 to-purple-500 text-white px-8 py-12 rounded-3xl shadow-2xl w-[95%] sm:w-[600px] md:w-[700px] text-center relative animate-fadeUp">
