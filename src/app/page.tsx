@@ -16,6 +16,20 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
+  const brokers = [
+    { name: "Binomo", logo: "/brokers/binomo.png" },
+    { name: "Exness", logo: "/brokers/exness.png" },
+    { name: "FBS", logo: "/brokers/fbs.png" },
+    { name: "OctaFX", logo: "/brokers/octafx.png" },
+    { name: "IQ Option", logo: "/brokers/iqoption.png" },
+    { name: "Deriv", logo: "/brokers/deriv.png" },
+    { name: "Quotex", logo: "/brokers/quotex.png" },
+    { name: "Pocket Option", logo: "/brokers/pocketoption.png" },
+    { name: "FXTM", logo: "/brokers/fxtm.png" },
+    { name: "XM", logo: "/brokers/xm.png" },
+    { name: "AvaTrade", logo: "/brokers/avatrade.png" },
+  ];
+
   return (
     <main className="bg-[#0B1120] text-white min-h-screen relative">
       <Navbar onHomeClick={triggerPopup} />
@@ -39,7 +53,7 @@ export default function Home() {
           </a>
         </section>
 
-        {/* ✅ Trusted Platforms Section - Updated Speed */}
+        {/* ✅ Trusted Platforms Section (gap-free scroll + bigger logos) */}
         <section className="py-12 px-6 text-center overflow-hidden">
           <h2 className="text-2xl font-bold text-white mb-8">
             Available on Trusted Platforms
@@ -47,32 +61,20 @@ export default function Home() {
 
           <motion.div
             className="flex gap-12 items-center w-max"
-            initial={{ x: "100%" }}
-            animate={{ x: "-100%" }}
+            initial={{ x: 0 }}
+            animate={{ x: "-50%" }}
             transition={{
               repeat: Infinity,
-              duration: 15, // ✅ Speed increased here
+              duration: 20, // 👌 Smooth speed
               ease: "linear",
             }}
           >
-            {[
-              { name: "Binomo", logo: "/brokers/binomo.png" },
-              { name: "Exness", logo: "/brokers/exness.png" },
-              { name: "FBS", logo: "/brokers/fbs.png" },
-              { name: "OctaFX", logo: "/brokers/octafx.png" },
-              { name: "IQ Option", logo: "/brokers/iqoption.png" },
-              { name: "Deriv", logo: "/brokers/deriv.png" },
-              { name: "Quotex", logo: "/brokers/quotex.png" },
-              { name: "Pocket Option", logo: "/brokers/pocketoption.png" },
-              { name: "FXTM", logo: "/brokers/fxtm.png" },
-              { name: "XM", logo: "/brokers/xm.png" },
-              { name: "AvaTrade", logo: "/brokers/avatrade.png" },
-            ].map((broker, index) => (
+            {[...brokers, ...brokers].map((broker, index) => (
               <div key={index} className="flex flex-col items-center w-28 shrink-0">
                 <img
                   src={broker.logo}
                   alt={broker.name}
-                  className="w-20 h-20 object-contain mb-2"
+                  className="w-20 h-20 object-contain mb-2" // ✅ Increased size
                 />
                 <span className="text-sm text-white">{broker.name}</span>
               </div>
