@@ -54,6 +54,24 @@ export default function AboutPage() {
           </ul>
         </section>
 
+        {/* ✅ Founder Section */}
+        <div className="mt-12 flex flex-col md:flex-row items-center gap-6 border-t border-gray-700 pt-10">
+          <img
+            src="/founder.jpg"
+            alt="Founder - Kabir Sinha"
+            className="w-32 h-32 rounded-full border-2 border-yellow-500 object-cover"
+          />
+          <div className="space-y-2 text-gray-300 text-center md:text-left">
+            <p className="text-lg font-semibold">Aryan Tagore</p>
+            <p>Founder, Forex Fusion</p>
+            <p className="text-sm">
+              Office 203, Floor 02, Al Zubara Tower, Salam Street,<br />
+              Abu Dhabi, UAE
+            </p>
+          </div>
+        </div>
+
+        {/* ✅ CTA Button */}
         <div className="text-center mt-16">
           <p className="text-lg text-gray-300 font-medium">
             Ready to take control of your financial future?
