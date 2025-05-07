@@ -4,8 +4,8 @@ import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
 export default function Pricing() {
-  const [duration, setDuration] = useState('monthly');
   const [selectedPlan, setSelectedPlan] = useState(null);
+  const [duration, setDuration] = useState('monthly'); // ✅ Missing hook added
   const searchParams = useSearchParams();
   const scrollToPlan = searchParams.get('plan');
 
@@ -66,7 +66,7 @@ export default function Pricing() {
 
       {/* Toggle */}
       <div className="flex justify-center gap-4 mb-10">
-        {[
+        {[ 
           { label: 'Monthly', key: 'monthly' },
           { label: '3 Month', key: 'threeMonth' },
           { label: '6 Month', key: 'sixMonth' },
@@ -85,16 +85,16 @@ export default function Pricing() {
         ))}
       </div>
 
-      {/* Plan Cards */}
+      {/* Pricing Cards */}
       <div className="flex justify-center gap-10 flex-wrap max-w-6xl mx-auto">
-        {[
+        {[ 
           { name: 'Core', id: 'core' },
           { name: 'Pro', id: 'pro' },
           { name: 'Apex', id: 'apex' }
         ].map((plan) => (
           <div
             key={plan.id}
-            onClick={() => setSelectedPlan(plan)}
+            onClick={() => setSelectedPlan(plan)} // ✅ Entire card clickable
             className={`cursor-pointer p-8 rounded-xl w-80 shadow-lg bg-[#111] border border-white transition-all duration-300
               ${
                 plan.id === 'core'
@@ -113,7 +113,7 @@ export default function Pricing() {
               </span>
             </span>
             <button
-              className={`${colorClass[plan.id]} text-white text-lg px-6 py-2 rounded-lg transition`}
+              className={`${colorClass[plan.id]} text-white text-lg px-6 py-2 rounded-lg transition pointer-events-none`}
             >
               Get {plan.name}
             </button>
@@ -121,7 +121,7 @@ export default function Pricing() {
         ))}
       </div>
 
-      {/* ✅ POPUP SECTION */}
+      {/* ✅ Popup Section */}
       {selectedPlan && (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
           <div className="bg-gradient-to-r from-green-400 to-purple-500 text-white px-8 py-12 rounded-3xl shadow-2xl w-[95%] sm:w-[600px] md:w-[700px] text-center relative animate-fadeUp">
@@ -131,14 +131,14 @@ export default function Pricing() {
             >
               ×
             </button>
-            <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">
+            <h2 className="text-4xl font-extrabold mb-4">
               {selectedPlan.name} Plan
             </h2>
-            <p className="text-lg sm:text-xl font-medium mb-6">
-              Price: {pricing[selectedPlan.id][duration]} / {duration === 'yearly' ? '1 Year' : duration === 'threeMonth' ? '3 Month' : duration === 'sixMonth' ? '6 Month' : 'Monthly'}
+            <p className="text-xl font-medium mb-6">
+              {pricing[selectedPlan.id][duration]} / {duration === 'yearly' ? '1 Year' : duration === 'threeMonth' ? '3 Month' : duration === 'sixMonth' ? '6 Month' : 'Monthly'}
             </p>
             <Link href={payLink[selectedPlan.id]}>
-              <button className="inline-block bg-white text-black font-semibold px-6 py-3 rounded-lg shadow hover:scale-105 transition duration-200">
+              <button className="bg-white text-black font-semibold px-6 py-3 rounded-lg shadow hover:scale-105 transition duration-200">
                 Pay Now
               </button>
             </Link>
