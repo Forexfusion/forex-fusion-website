@@ -1,7 +1,10 @@
 'use client';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function ServicesPage() {
+  const [selectedService, setSelectedService] = useState(null);
+
   const services = [
     {
       title: "Core (Entry-Level)",
@@ -57,8 +60,9 @@ export default function ServicesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white px-6 py-12">
+    <div className="min-h-screen bg-black text-white px-6 py-12 relative">
       <h1 className="text-4xl font-bold text-center mb-12">Our Services</h1>
+
       <div className="grid md:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <div
@@ -74,23 +78,49 @@ export default function ServicesPage() {
                 ))}
               </ul>
             </div>
-           <Link
-  href={{ pathname: '/', hash: 'pricing', query: { plan: service.slug } }}
-  className={`mt-auto inline-block text-center text-white font-medium py-2 px-4 rounded-xl shadow-lg hover:scale-105 transition 
-    ${
-      service.slug === 'core'
-        ? 'bg-blue-600 hover:bg-blue-700'
-        : service.slug === 'pro'
-        ? 'bg-yellow-400 text-black hover:bg-yellow-500'
-        : 'bg-green-600 hover:bg-green-700'
-    }`}
->
-  Get Now
-</Link>
 
+            <button
+              onClick={() => setSelectedService(service)}
+              className={`mt-auto inline-block text-center text-white font-medium py-2 px-4 rounded-xl shadow-lg hover:scale-105 transition 
+              ${
+                service.slug === 'core'
+                  ? 'bg-blue-600 hover:bg-blue-700'
+                  : service.slug === 'pro'
+                  ? 'bg-yellow-400 text-black hover:bg-yellow-500'
+                  : 'bg-green-600 hover:bg-green-700'
+              }`}
+            >
+              Get Now
+            </button>
           </div>
         ))}
       </div>
+
+      {/* ✅ POPUP SECTION */}
+      {selectedService && (
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+          <div className="bg-gradient-to-r from-green-400 to-purple-500 text-white px-8 py-12 rounded-3xl shadow-2xl w-[95%] sm:w-[600px] md:w-[700px] text-center relative animate-fadeUp">
+            <button
+              className="absolute top-3 right-4 text-white text-2xl font-bold"
+              onClick={() => setSelectedService(null)}
+            >
+              ×
+            </button>
+            <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">
+              {selectedService.title}
+            </h2>
+            <p className="text-lg sm:text-xl font-medium mb-6">
+              Ready to get started with the {selectedService.slug} plan? Contact our team to activate it.
+            </p>
+            <a
+              href="/contact"
+              className="inline-block bg-white text-black font-semibold px-6 py-3 rounded-lg shadow hover:scale-105 transition duration-200"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
