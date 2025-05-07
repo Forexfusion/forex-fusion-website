@@ -65,10 +65,11 @@ export default function ServicesPage() {
 
       <div className="grid md:grid-cols-3 gap-8">
         {services.map((service, index) => (
-          <div
-            key={index}
-            className={`bg-[#111827] border border-gray-700 rounded-2xl p-6 shadow-md transition-all duration-300 flex flex-col justify-between ${glowShadow[service.color]}`}
-          >
+         <div
+  key={index}
+  onClick={() => setSelectedService(service)} // ✅ Click entire card
+  className={`cursor-pointer bg-[#111827] border border-gray-700 rounded-2xl p-6 shadow-md transition-all duration-300 flex flex-col justify-between ${glowShadow[service.color]} hover:scale-105`}
+>
             <div>
               <h2 className="text-2xl font-semibold mb-3">{service.title}</h2>
               <p className="text-gray-300 text-sm mb-4">{service.description}</p>
