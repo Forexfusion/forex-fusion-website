@@ -2,94 +2,63 @@
 import { useState } from 'react';
 
 export default function Pricing() {
-  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
-
-  const pricing = {
-    core: {
-      name: 'Core',
-      tagline: '“Smart Start for Every Trader”',
-      price: {
-        monthly: '350$',
-        threeMonth: '900$',
-        sixMonth: '1500$',
-        yearly: '2800$'
-      }
-    },
-    pro: {
-      name: 'Pro',
-      tagline: '“Power & Performance Combined”',
-      price: {
-        monthly: '500$',
-        threeMonth: '1200$',
-        sixMonth: '2000$',
-        yearly: '3500$'
-      }
-    },
-    apex: {
-      name: 'Apex',
-      tagline: '“Unleash Elite Trading Mastery”',
-      price: {
-        monthly: '1000$',
-        threeMonth: '2200$',
-        sixMonth: '3800$',
-        yearly: '5500$'
-      }
-    }
-  };
+  const [popupPlan, setPopupPlan] = useState<string | null>(null);
 
   return (
-    <section id="pricing" className="py-20 text-center bg-[#0B1120] text-white">
+    <section className="py-20 px-4 bg-[#0B1120] text-white text-center">
       <h2 className="text-3xl font-bold mb-6">Our Pricing Plans</h2>
-      <p className="mb-6">Choose a plan that fits your trading style and experience level.</p>
+      <p className="mb-10 text-gray-300">Choose a plan that fits your trading style.</p>
 
-      {/* Card Container */}
-      <div className="flex flex-wrap justify-center gap-8">
-
-        {Object.entries(pricing).map(([key, plan]) => (
+      {/* PLAN CARDS */}
+      <div className="flex flex-wrap justify-center gap-6">
+        {['core', 'pro', 'apex'].map((plan) => (
           <div
-            key={key}
-            onClick={() => setSelectedPlan(key)}
-            className="neon-card cursor-pointer p-6 rounded-2xl w-72 text-center border border-gray-700 hover:shadow-lg transition"
+            key={plan}
+            onClick={() => setPopupPlan(plan)}
+            className="cursor-pointer w-72 p-6 border border-gray-700 rounded-2xl neon-card hover:shadow-lg transition"
           >
-            <h3 className="font-bold text-xl mb-2">{plan.name}</h3>
-            <p className="mb-4 text-sm">{plan.tagline}</p>
+            <h3 className="text-xl font-bold mb-2 capitalize">{plan}</h3>
+            <p className="text-sm text-gray-400 mb-4">
+              {plan === 'core'
+                ? 'Smart Start for Every Trader'
+                : plan === 'pro'
+                ? 'Power & Performance Combined'
+                : 'Unleash Elite Trading Mastery'}
+            </p>
             <ul className="text-sm space-y-1 mb-4">
-              <li><strong>{plan.price.monthly}</strong> / Monthly</li>
-              <li><strong>{plan.price.threeMonth}</strong> / Three Month</li>
-              <li><strong>{plan.price.sixMonth}</strong> / Six Month</li>
-              <li><strong>{plan.price.yearly}</strong> / One Year</li>
+              <li>Monthly: {plan === 'core' ? '350$' : plan === 'pro' ? '500$' : '1000$'}</li>
+              <li>3 Month: {plan === 'core' ? '900$' : plan === 'pro' ? '1200$' : '2200$'}</li>
+              <li>6 Month: {plan === 'core' ? '1500$' : plan === 'pro' ? '2000$' : '3800$'}</li>
+              <li>Yearly: {plan === 'core' ? '2800$' : plan === 'pro' ? '3500$' : '5500$'}</li>
             </ul>
-            <span className="inline-block bg-gradient-to-r from-green-400 to-purple-500 text-white px-4 py-2 rounded-lg transition">
+            <div className="bg-gradient-to-r from-green-400 to-purple-500 py-2 px-4 rounded-lg">
               View Details
-            </span>
+            </div>
           </div>
         ))}
-
       </div>
 
-      {/* ✅ Popup */}
-      {selectedPlan && (
+      {/* POPUP MODAL */}
+      {popupPlan && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-          <div className="bg-gradient-to-r from-green-400 to-purple-500 text-white px-8 py-10 rounded-3xl shadow-2xl w-[95%] sm:w-[600px] md:w-[700px] text-center relative animate-fadeUp">
+          <div className="bg-gradient-to-r from-green-400 to-purple-500 text-white p-8 rounded-2xl w-[90%] sm:w-[500px] relative">
             <button
-              className="absolute top-3 right-4 text-white text-2xl font-bold"
-              onClick={() => setSelectedPlan(null)}
+              onClick={() => setPopupPlan(null)}
+              className="absolute top-3 right-4 text-2xl font-bold"
             >
               ×
             </button>
-            <h2 className="text-3xl font-extrabold mb-4">
-              {pricing[selectedPlan].name} Plan
-            </h2>
-            <p className="text-lg mb-2">{pricing[selectedPlan].tagline}</p>
-            <div className="text-base leading-loose mt-4">
-              <p><strong>{pricing[selectedPlan].price.monthly}</strong> / Monthly</p>
-              <p><strong>{pricing[selectedPlan].price.threeMonth}</strong> / 3 Month</p>
-              <p><strong>{pricing[selectedPlan].price.sixMonth}</strong> / 6 Month</p>
-              <p><strong>{pricing[selectedPlan].price.yearly}</strong> / Yearly</p>
-            </div>
+            <h2 className="text-2xl font-bold mb-4 capitalize">{popupPlan} Plan</h2>
+            <p className="mb-4">
+              {popupPlan === 'core'
+                ? '350$/mo, 900$/3mo, 1500$/6mo, 2800$/year'
+                : popupPlan === 'pro'
+                ? '500$/mo, 1200$/3mo, 2000$/6mo, 3500$/year'
+                : '1000$/mo, 2200$/3mo, 3800$/6mo, 5500$/year'}
+            </p>
             <a
-              href={`/pay/crypto/${selectedPlan}`}
-              className="inline-block mt-6 bg-white text-black px-6 py-3 rounded-lg font-semibold hover:scale-105 transition"
+              href={`/pay/crypto/${popupPlan}`}
+              className="bg-white text-black font-semibold px-6 py-2 rounded-lg hover:scale-105 transition"
             >
               Pay Now
             </a>
