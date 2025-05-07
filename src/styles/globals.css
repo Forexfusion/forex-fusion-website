@@ -31,7 +31,7 @@ a {
 }
 
 .animate-slide {
-  animation: slide 25s linear infinite;
+  animation: slide 12s linear infinite;
 }
 
 /* Watermark Logo in Background */
