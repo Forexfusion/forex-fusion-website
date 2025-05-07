@@ -74,7 +74,7 @@ export default function Home() {
                 <img
                   src={broker.logo}
                   alt={broker.name}
-                  className="w-20 h-20 object-contain mb-2" // ✅ Increased size
+                  className="w-14 h-14 object-contain mb-2" // ✅ Increased size
                 />
                 <span className="text-sm text-white">{broker.name}</span>
               </div>
