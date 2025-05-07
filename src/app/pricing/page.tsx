@@ -5,17 +5,18 @@ import Link from 'next/link';
 
 export default function Pricing() {
   const [duration, setDuration] = useState('monthly');
+  const [selectedPlan, setSelectedPlan] = useState(null);
   const searchParams = useSearchParams();
-  const selectedPlan = searchParams.get('plan');
+  const scrollToPlan = searchParams.get('plan');
 
   useEffect(() => {
-    if (selectedPlan) {
+    if (scrollToPlan) {
       const pricingSection = document.getElementById('pricing');
       if (pricingSection) {
         pricingSection.scrollIntoView({ behavior: 'smooth' });
       }
     }
-  }, [selectedPlan]);
+  }, [scrollToPlan]);
 
   const pricing = {
     core: {
@@ -44,8 +45,20 @@ export default function Pricing() {
     apex: 'bg-green-600 hover:bg-green-700'
   };
 
+  const planTagline = {
+    core: '“Smart Start for Every Trader”',
+    pro: '“Power & Performance Combined”',
+    apex: '“Unleash Elite Trading Mastery”'
+  };
+
+  const payLink = {
+    core: '/pay/crypto/core',
+    pro: '/pay/crypto/pro',
+    apex: '/pay/crypto/apex'
+  };
+
   return (
-    <section id="pricing" className="py-24 px-4 text-center bg-[#0e0e0e] text-white">
+    <section id="pricing" className="py-24 px-4 text-center bg-[#0e0e0e] text-white relative">
       <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Pricing Plans</h2>
       <p className="text-lg text-gray-300 mb-8">
         Choose a plan that fits your trading style and experience level.
@@ -72,48 +85,66 @@ export default function Pricing() {
         ))}
       </div>
 
-      {/* Plan Cards with Neon Glow */}
+      {/* Plan Cards */}
       <div className="flex justify-center gap-10 flex-wrap max-w-6xl mx-auto">
         {[
-          { name: 'Core', id: 'core', link: '/pay/crypto/core' },
-          { name: 'Pro', id: 'pro', link: '/pay/crypto/pro' },
-          { name: 'Apex', id: 'apex', link: '/pay/crypto/apex' }
+          { name: 'Core', id: 'core' },
+          { name: 'Pro', id: 'pro' },
+          { name: 'Apex', id: 'apex' }
         ].map((plan) => (
           <div
-  key={plan.id}
-  className={`p-8 rounded-xl w-80 shadow-lg bg-[#111] border border-white transition-all duration-300
-    ${
-      plan.id === 'core'
-        ? 'hover:shadow-[0_0_25px_#00BFFF]'
-        : plan.id === 'pro'
-        ? 'hover:shadow-[0_0_25px_#FFD700]'
-        : 'hover:shadow-[0_0_25px_#00FF99]'
-    }`}
->
+            key={plan.id}
+            onClick={() => setSelectedPlan(plan)}
+            className={`cursor-pointer p-8 rounded-xl w-80 shadow-lg bg-[#111] border border-white transition-all duration-300
+              ${
+                plan.id === 'core'
+                  ? 'hover:shadow-[0_0_25px_#00BFFF]'
+                  : plan.id === 'pro'
+                  ? 'hover:shadow-[0_0_25px_#FFD700]'
+                  : 'hover:shadow-[0_0_25px_#00FF99]'
+              }`}
+          >
             <h3 className="font-bold text-2xl mb-3">{plan.name}</h3>
-            <p className="mb-3 text-gray-400 text-base">
-              {plan.name === 'Core'
-                ? '“Smart Start for Every Trader”'
-                : plan.name === 'Pro'
-                ? '“Power & Performance Combined”'
-                : '“Unleash Elite Trading Mastery”'}
-            </p>
+            <p className="mb-3 text-gray-400 text-base">{planTagline[plan.id]}</p>
             <span className="block text-xl font-semibold mb-6">
               {pricing[plan.id][duration]}{' '}
               <span className="text-base font-normal">
                 / {duration === 'yearly' ? '1 Year' : duration === 'threeMonth' ? '3 Month' : duration === 'sixMonth' ? '6 Month' : 'Monthly'}
               </span>
             </span>
-            <Link href={plan.link}>
-              <button
-                className={`${colorClass[plan.id]} text-white text-lg px-6 py-2 rounded-lg transition`}
-              >
-                Get {plan.name}
-              </button>
-            </Link>
+            <button
+              className={`${colorClass[plan.id]} text-white text-lg px-6 py-2 rounded-lg transition`}
+            >
+              Get {plan.name}
+            </button>
           </div>
         ))}
       </div>
+
+      {/* ✅ POPUP SECTION */}
+      {selectedPlan && (
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+          <div className="bg-gradient-to-r from-green-400 to-purple-500 text-white px-8 py-12 rounded-3xl shadow-2xl w-[95%] sm:w-[600px] md:w-[700px] text-center relative animate-fadeUp">
+            <button
+              className="absolute top-3 right-4 text-white text-2xl font-bold"
+              onClick={() => setSelectedPlan(null)}
+            >
+              ×
+            </button>
+            <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">
+              {selectedPlan.name} Plan
+            </h2>
+            <p className="text-lg sm:text-xl font-medium mb-6">
+              Price: {pricing[selectedPlan.id][duration]} / {duration === 'yearly' ? '1 Year' : duration === 'threeMonth' ? '3 Month' : duration === 'sixMonth' ? '6 Month' : 'Monthly'}
+            </p>
+            <Link href={payLink[selectedPlan.id]}>
+              <button className="inline-block bg-white text-black font-semibold px-6 py-3 rounded-lg shadow hover:scale-105 transition duration-200">
+                Pay Now
+              </button>
+            </Link>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
