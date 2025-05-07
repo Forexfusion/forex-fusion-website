@@ -51,7 +51,7 @@ export default function Home() {
             animate={{ x: "-100%" }}
             transition={{
               repeat: Infinity,
-              duration: 20, // ✅ Speed increased here
+              duration: 15, // ✅ Speed increased here
               ease: "linear",
             }}
           >
