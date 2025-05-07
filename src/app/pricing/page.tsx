@@ -4,8 +4,8 @@ import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
 export default function Pricing() {
-  const [selectedPlan, setSelectedPlan] = useState(null);
-  const [duration, setDuration] = useState('monthly'); // ✅ Missing hook added
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  const [duration, setDuration] = useState('monthly');
   const searchParams = useSearchParams();
   const scrollToPlan = searchParams.get('plan');
 
@@ -94,7 +94,7 @@ export default function Pricing() {
         ].map((plan) => (
           <div
             key={plan.id}
-            onClick={() => setSelectedPlan(plan)} // ✅ Entire card clickable
+            onClick={() => setSelectedPlan(plan.id)} // ✅ only send ID string
             className={`cursor-pointer p-8 rounded-xl w-80 shadow-lg bg-[#111] border border-white transition-all duration-300
               ${
                 plan.id === 'core'
@@ -121,7 +121,7 @@ export default function Pricing() {
         ))}
       </div>
 
-      {/* ✅ Popup Section */}
+      {/* ✅ POPUP */}
       {selectedPlan && (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
           <div className="bg-gradient-to-r from-green-400 to-purple-500 text-white px-8 py-12 rounded-3xl shadow-2xl w-[95%] sm:w-[600px] md:w-[700px] text-center relative animate-fadeUp">
@@ -131,13 +131,20 @@ export default function Pricing() {
             >
               ×
             </button>
-            <h2 className="text-4xl font-extrabold mb-4">
-              {selectedPlan.name} Plan
+            <h2 className="text-4xl font-extrabold mb-4 capitalize">
+              {selectedPlan} Plan
             </h2>
             <p className="text-xl font-medium mb-6">
-              {pricing[selectedPlan.id][duration]} / {duration === 'yearly' ? '1 Year' : duration === 'threeMonth' ? '3 Month' : duration === 'sixMonth' ? '6 Month' : 'Monthly'}
+              {pricing[selectedPlan][duration]} /{" "}
+              {duration === "yearly"
+                ? "1 Year"
+                : duration === "threeMonth"
+                ? "3 Month"
+                : duration === "sixMonth"
+                ? "6 Month"
+                : "Monthly"}
             </p>
-            <Link href={payLink[selectedPlan.id]}>
+            <Link href={payLink[selectedPlan]}>
               <button className="bg-white text-black font-semibold px-6 py-3 rounded-lg shadow hover:scale-105 transition duration-200">
                 Pay Now
               </button>
