@@ -72,7 +72,7 @@ export default function Home() {
                 <img
                   src={broker.logo}
                   alt={broker.name}
-                  className="w-12 h-12 object-contain mb-2"
+                  className="w-20 h-20 object-contain mb-2"
                 />
                 <span className="text-sm text-white">{broker.name}</span>
               </div>
