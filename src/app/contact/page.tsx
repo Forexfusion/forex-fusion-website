@@ -24,7 +24,7 @@ export default function ContactPage() {
         alert("✅ Message sent successfully!");
         setForm({ name: "", email: "", contact: "", message: "" }); // Clear form
       } else {
-        alert("❌ Something went wrong: " + result.message);
+        alert("❌ Something went wrong: " + (result?.message || 'Unknown error'));
       }
     } catch (error) {
       alert("❌ Something went wrong. Please try again later.");
