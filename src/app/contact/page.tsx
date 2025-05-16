@@ -57,7 +57,7 @@ export default function ContactPage() {
             className="w-full p-3 rounded bg-[#1F2937] border border-gray-700"
           />
           <input
-            type="text"
+            type="tel"
             name="contact"
             value={form.contact}
             onChange={(e) => setForm({ ...form, contact: e.target.value })}
