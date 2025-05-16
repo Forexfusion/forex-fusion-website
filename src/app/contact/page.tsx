@@ -20,7 +20,7 @@ export default function ContactPage() {
 
       const result = await response.json();
 
-      if (result.status === "success") {
+      if (result.result === "success") {
         alert("✅ Message sent successfully!");
         setForm({ name: "", email: "", contact: "", message: "" }); // Clear form
       } else {
