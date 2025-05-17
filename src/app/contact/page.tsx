@@ -8,7 +8,9 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-console.log("📤 Submitting Form:", form);
+
+    console.log("📤 Submitting Form:", form);
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -20,12 +22,11 @@ console.log("📤 Submitting Form:", form);
 
       const result = await response.json();
 
-     if (result.result === "Success") {
-  alert("✅ Message sent successfully!");
-  setForm({ name: "", email: "", phone: "", message: "" });
-} else {
-  alert("❌ Submission failed: " + (result?.message || "Unknown error"));
-}
+      if (result.result === "Success") {
+        alert("✅ Message sent successfully!");
+        setForm({ name: "", email: "", phone: "", message: "" });
+      } else {
+        alert("❌ Submission failed: " + (result?.message || "Unknown error"));
       }
     } catch (error) {
       alert("❌ Something went wrong. Please try again later.");
