@@ -29,7 +29,7 @@ export async function POST(request) {
     return new Response(
       JSON.stringify({
         result: "Error",
-        message: error.message || "Unexpected error",
+        message: error.message || "Something went wrong",
       }),
       {
         status: 500,
