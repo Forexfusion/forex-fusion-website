@@ -59,7 +59,7 @@ console.log("📤 Submitting Form:", form);
           <input
             type="tel"
             name="phone"
-            value={form.contact}
+            value={form.phone}
             onChange={(e) => setForm({ ...form, phone: e.target.value })}
             placeholder="Your Contact Number"
             required
