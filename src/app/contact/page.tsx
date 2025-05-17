@@ -58,7 +58,7 @@ console.log("📤 Submitting Form:", form);
           />
           <input
             type="tel"
-            name="contact"
+            name="phone"
             value={form.contact}
             onChange={(e) => setForm({ ...form, contact: e.target.value })}
             placeholder="Your Contact Number"
