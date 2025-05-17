@@ -20,11 +20,12 @@ console.log("📤 Submitting Form:", form);
 
       const result = await response.json();
 
-      if (result.result === "success") {
-        alert("✅ Message sent successfully!");
-        setForm({ name: "", email: "", phone: "", message: "" }); // Clear form
-      } else {
-        alert("❌ Something went wrong: " + (result?.message || 'Unknown error'));
+     if (result.result === "Success") {
+  alert("✅ Message sent successfully!");
+  setForm({ name: "", email: "", phone: "", message: "" });
+} else {
+  alert("❌ Submission failed: " + (result?.message || "Unknown error"));
+}
       }
     } catch (error) {
       alert("❌ Something went wrong. Please try again later.");
