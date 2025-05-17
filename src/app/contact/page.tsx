@@ -22,7 +22,7 @@ console.log("📤 Submitting Form:", form);
 
       if (result.result === "success") {
         alert("✅ Message sent successfully!");
-        setForm({ name: "", email: "", contact: "", message: "" }); // Clear form
+        setForm({ name: "", email: "", phone: "", message: "" }); // Clear form
       } else {
         alert("❌ Something went wrong: " + (result?.message || 'Unknown error'));
       }
