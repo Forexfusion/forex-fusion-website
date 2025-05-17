@@ -60,7 +60,7 @@ console.log("📤 Submitting Form:", form);
             type="tel"
             name="phone"
             value={form.contact}
-            onChange={(e) => setForm({ ...form, contact: e.target.value })}
+            onChange={(e) => setForm({ ...form, phone: e.target.value })}
             placeholder="Your Contact Number"
             required
             className="w-full p-3 rounded bg-[#1F2937] border border-gray-700"
